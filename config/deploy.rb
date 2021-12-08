@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "facion"
+set :application, "fashion"
 set :repo_url, "git@github.com:nastyatomchuk/fashion.git"
 
 set :user, "deployer"
@@ -11,7 +11,7 @@ set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :use_sudo, false
 set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :pty, true
-append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_files, "config/database.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 # Default branch is :master

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+# ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -59,3 +59,4 @@ group :development do
   gem 'capistrano-bundler', '~> 2.0.1', require: false
   gem 'capistrano3-puma', '~> 5.2.0', require: false
 end
+gem 'puma', '~> 5.0'
