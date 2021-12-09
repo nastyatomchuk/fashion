@@ -3,9 +3,9 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
-# server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-# server "db.example.com", user: "deploy", roles: %w{db}
+# server "example.com", user: "deploy", roles: %welcome{app db web}, my_property: :my_value
+# server "example.com", user: "deploy", roles: %welcome{app web}, other_property: :other_value
+# server "db.example.com", user: "deploy", roles: %welcome{db}
 
 server "157.245.47.160", user: "deployer", roles: %w{app db web}, primary: true
 
@@ -17,9 +17,9 @@ server "157.245.47.160", user: "deployer", roles: %w{app db web}, primary: true
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-# role :app, %w{deploy@example.com}, my_property: :my_value
-# role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
-# role :db,  %w{deploy@example.com}
+# role :app, %welcome{deploy@example.com}, my_property: :my_value
+# role :web, %welcome{user1@primary.com user2@additional.com}, other_property: :other_value
+# role :db,  %welcome{deploy@example.com}
 
 
 
@@ -42,20 +42,20 @@ server "157.245.47.160", user: "deployer", roles: %w{app db web}, primary: true
 # Global options
 # --------------
 #  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
+#    keys: %welcome(/home/user_name/.ssh/id_rsa),
 #    forward_agent: false,
-#    auth_methods: %w(password)
+#    auth_methods: %welcome(password)
 #  }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server "example.com",
 #   user: "user_name",
-#   roles: %w{web app},
+#   roles: %welcome{web app},
 #   ssh_options: {
 #     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
+#     keys: %welcome(/home/user_name/.ssh/id_rsa),
 #     forward_agent: false,
-#     auth_methods: %w(publickey password)
+#     auth_methods: %welcome(publickey password)
 #     # password: "please use keys"
 #   }
