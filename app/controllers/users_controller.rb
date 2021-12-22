@@ -28,7 +28,8 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
+        flash.now[:alert] = "User save error"
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -65,7 +66,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    # params.fetch(:user, {})
+    #params.fetch(:user, {})
     params.require(:user).permit(:full_name, :phone, :email, :password)
   end
 end
