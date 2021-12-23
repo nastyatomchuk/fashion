@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   resources :users
   devise_for :users
-
-  get 'persons/profile'
-
   root "persons#profile"
 
-  get 'welcome', to: "welcome#i"
+  get 'persons/profile'
 
   get 'persons/profile', as: 'user_root'
 

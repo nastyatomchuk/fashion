@@ -2,9 +2,17 @@
 
 <h1>Users</h1>
 
-<table border="1" cellpadding="5">
-   <tbody >
-    <% @users.each do |user| %>
+<table class="table table-sm table-striped ml-4">
+  <thead>
+  <tr>
+    <th>Full name</th>
+    <th>Phone</th>
+    <th>Email address</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <% @users.each do |user| %>
       <tr>
         <td><%= user.full_name %></td>
         <td><%= user.phone %></td>
@@ -19,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New user', new_user_path %>

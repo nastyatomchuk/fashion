@@ -15,16 +15,9 @@ Turbolinks.start()
 ActiveStorage.start()
 
 $(document).on('turbolinks:load', function(){
-
-    // new Noty({
-    //     type: 'success',
-    //     theme: 'bootstrap-v4',
-    //     text: 'Some notification text2'
-    // }).show();
-
     new Noty({
-        type: $('#flash_message').attr('flash_type'),
-        theme: 'mint',
+        type: $('#flash_message').attr('flash-type'),
+        theme: 'bootstrap-v4',
         text: $('#flash_message').text()
     }).show();
 })

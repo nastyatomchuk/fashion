@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :rememberable,
          :validatable
 
-  validates :full_name, presence:true
+  validates :full_name, :phone, presence: true
 end
