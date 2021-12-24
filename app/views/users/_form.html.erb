@@ -2,7 +2,7 @@
 
   <%= form.label :"Full name" %>
   <div class="input-group">
-    <%= form.text_field :full_name, class: "form-control is-invalid" %>
+    <%= form.text_field :full_name, class: "form-control #{field_validity_class(user, full_name)}" %>
     <% if user.errors.include?(:full_name) %>
       <div class="invalid-feedback">
         <% user.errors.full_messages_for(:full_name).each do |error_message| %>
@@ -10,6 +10,11 @@
         <% end %>
       </div>
     <% end %>
+
+
+    <div class="<%= div_class(user) %>">
+      <%= user_valiadation(user, :full_name) %>
+    </div>
   </div>
 
   <%= form.label :Phone %>
