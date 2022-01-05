@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
-  resources :users
-  devise_for :users
   root "persons#profile"
 
-  get 'persons/profile'
+  devise_for :users
 
-  get 'persons/profile', as: 'user_root'
+  resources :products
+  resources :users
+
+  get  "users/:id" => "users#show"
+
+  # get 'persons/profile', as: 'user_root'
 
   get 'admin' => 'welcome#i'
 
   get 'admin/users' => 'users#index'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'admin/products' => 'products#index'
 end

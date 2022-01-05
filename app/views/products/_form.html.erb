@@ -1,0 +1,22 @@
+<%= form_with(model: product) do |form| %>
+  <%= form.label :Title %>
+    <div class="input-group">
+      <%= form.text_field :title, class: "form-control #{field_validity_class(product, :title)}" %>
+      <%= filed_errors(product, :title) %>
+    </div>
+
+  <%= form.label :Description%>
+  <div class="input-group">
+    <%= form.text_field :description, class: "form-control #{field_validity_class(product, :description)}" %>
+    <%= filed_errors(product, :description) %>
+  </div>
+
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions" align="center" style="margin-top: 20px">
+    <%= form.submit :class=> "bnt btn-primary bnt-lg" %>
+  </div>
+<% end %>
