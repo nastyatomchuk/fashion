@@ -1,9 +1,10 @@
 <%= form_with(model: product) do |form| %>
+
   <%= form.label :Title %>
-    <div class="input-group">
-      <%= form.text_field :title, class: "form-control #{field_validity_class(product, :title)}" %>
-      <%= filed_errors(product, :title) %>
-    </div>
+  <div class="input-group">
+    <%= form.text_field :title, class: "form-control #{field_validity_class(product, :title)}" %>
+    <%= filed_errors(product, :title) %>
+  </div>
 
   <%= form.label :Description%>
   <div class="input-group">
@@ -11,9 +12,10 @@
     <%= filed_errors(product, :description) %>
   </div>
 
+  <%= form.label :Image %>
   <div>
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "form-control #{field_validity_class(product, :image)}" %>
+    <%= filed_errors(product, :image) %>
   </div>
 
   <div class="actions" align="center" style="margin-top: 20px">
