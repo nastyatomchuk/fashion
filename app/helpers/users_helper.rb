@@ -2,15 +2,14 @@ module UsersHelper
   def field_validity_class(model, attribute)
     return unless model.errors.include?(attribute)
 
-    "is-invalid"
+      "is-invalid"
   end
 
-  def user_valiadation(model, attribute)
-    return unless  model.errors.include?(attribute)
-    <div class="invalid-feedback">
-      model.errors.full_messages_for(attribute).each do |error_message|
-          error_message
-      end
-    </div>
+  def filed_errors(model, attribute)
+    return unless model.errors.include?(attribute)
+
+    content_tag :div, :class => "invalid-feedback" do
+      model.errors.full_messages_for(attribute).join(', ')
     end
+  end
 end
