@@ -3,7 +3,6 @@ module UsersHelper
     return unless model.errors.include?(attribute)
 
       "is-invalid"
-
   end
 
   def filed_errors(model, attribute)
