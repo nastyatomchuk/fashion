@@ -17,7 +17,7 @@
       <tr>
         <td><%= product.title %></td>
         <td><%= truncate(product.description, length: 150) %></td>
-        <td>  <%= image_tag(product.image.url, alt: 'Image', :size => "150x150") if product.image? %></td>
+        <td>  <%= image_tag(product.image.url, alt: 'Image', :size => "150x200") if product.image? %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
