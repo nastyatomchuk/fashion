@@ -3,7 +3,7 @@
 <table class="table">
   <thead>
   <tr>
-<!--    <th>entity</th>-->
+    <th>entity</th>
     <th>currency</th>
     <th>alphabetic_code</th>
     <th colspan="3"></th>
@@ -13,7 +13,7 @@
   <tbody>
   <% @currency.each do |currency| %>
     <tr>
-<!--      <td><%#= currency.entity %></td>-->
+      <td><%= currency.entity %></td>
       <td><%= currency.currency %></td>
       <td><%= currency.alphabetic_code %></td>
 <!--      <td><%#= link_to 'Show', product %></td>-->

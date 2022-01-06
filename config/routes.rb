@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   resources :products
   resources :users
 
-  get "currency" => "currency#index"
-
   get  "users/:id" => "users#show"
 
   # get 'persons/profile', as: 'user_root'
@@ -16,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'admin/users' => 'users#index'
 
-
   get 'admin/products' => 'products#index'
+
+  get "admin/currency" => "currency#index"
+
+  get "admin/exchange" => "exchange#index"
 end
