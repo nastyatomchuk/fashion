@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "admin/currency" => "currency#index"
 
   get "admin/exchange" => "exchange#index"
+
 end
