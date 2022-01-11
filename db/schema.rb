@@ -57,10 +57,11 @@ ActiveRecord::Schema.define(version: 2022_01_10_151658) do
   end
 
   create_table "rates", force: :cascade do |t|
+    t.decimal "rate", precision: 7, scale: 4
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "currencies_id"
-    t.index ["currencies_id"], name: "index_rates_on_currencies_id"
+    t.integer "currency_id"
+    t.index ["currency_id"], name: "index_rates_on_currency_id"
   end
 
   create_table "users", force: :cascade do |t|

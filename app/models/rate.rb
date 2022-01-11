@@ -1,3 +1,3 @@
 class Rate < ApplicationRecord
-  has_many :currencies
+  belongs_to :currency
 end
