@@ -43,3 +43,5 @@ yarn-debug.log*
 
 /.idea
 .ruby-gemset
+
+public/uploads
