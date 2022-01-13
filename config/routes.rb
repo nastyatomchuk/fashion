@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get "admin/currency" => "currency#index"
 
   get "admin/rate" => "rate#index"
+  get "admin/current_rate" => "rate#current_rate"
 
 end
