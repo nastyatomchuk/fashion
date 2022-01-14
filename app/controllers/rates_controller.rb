@@ -1,10 +1,11 @@
-class RateController < ApplicationController
+class RatesController < ApplicationController
   def index
     @rate = Rate.all
   end
 
   def new
     @rate = Rate.new
+    @currencies = Currency.all
   end
 
   def create
@@ -22,6 +23,6 @@ class RateController < ApplicationController
   end
 
   def product_params
-    params.require(:rate).permit(:currencies_id)
+    params.require(:rate).permit(:rate, :currencies_id)
   end
 end

@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :rates
   resources :products
   resources :users
+
 
   get  "users/:id" => "users#show"
 
@@ -18,6 +20,6 @@ Rails.application.routes.draw do
 
   get "admin/currency" => "currency#index"
 
-  get "admin/rate" => "rate#index"
+  get "admin/rates" => "rates#index"
 
 end

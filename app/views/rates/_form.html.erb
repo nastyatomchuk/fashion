@@ -1,0 +1,36 @@
+<%= form_with(model: rate) do |form| %>
+
+  <%= form.label :entity %>
+  <div class="input-group">
+    <%= form.text_field :entity, class: "form-control #{field_validity_class(rate, :entity)}" %>
+    <%= filed_errors(rate, :entity) %>
+  </div>
+
+  <%= form.label :currency%>
+  <div class="input-group">
+    <%= form.select :currency, class: "form-control #{field_validity_class(rate, :currency)}" %>
+    <%= filed_errors(rate, :currency) %>
+
+<!--    <select name="currencies_id">-->
+      <%#= @currencies.each do |currency| %>
+<!--        <option value="<%#= currency.id %>"><%#= currency.currency %></option>-->
+      <%# end %>
+<!--    </select>-->
+  </div>
+
+  <%= form.label :alphabetic_code %>
+  <div>
+    <%= form.text_field  :alphabetic_code, class: "form-control #{field_validity_class(rate, :alphabetic_code)}" %>
+    <%= filed_errors(rate, :alphabetic_code) %>
+  </div>
+
+  <%= form.label :rate %>
+  <div>
+    <%= form.text_field  :rate, class: "form-control #{field_validity_class(rate, :rate)}" %>
+    <%= filed_errors(rate, :rate) %>
+  </div>
+
+  <div class="actions" align="center" style="margin-top: 20px">
+    <%= form.submit :class=> "bnt btn-primary bnt-lg" %>
+  </div>
+<% end %>
