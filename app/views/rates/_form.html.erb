@@ -1,5 +1,5 @@
 <%= simple_form_for @rate do |form| %>
-  <%= form.association :currency, label: "entity", collection: @currencies.order(:entity), label_method: :entity, prompt: "< Choose entity >" %>
+  <%= form.association :currency, label: "entity", collection: @currencies.order(:id), label_method: :id, prompt: "< Choose entity >" %>
   <%= form.input :rate, label: "rate" %>
 
   <%= form.button :submit, class: "bnt btn-primary bnt-lg" %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>currencies_id:</strong>
+  <%= @rate.title %>
+</p>
+
+<p>
+  <strong>rate:</strong>
+  <%= @rate.description %>
+</p>
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', products_path %>

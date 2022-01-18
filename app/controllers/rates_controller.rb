@@ -10,6 +10,7 @@ class RatesController < ApplicationController
 
   def create
     @rate = Rate.new(product_params)
+
     if @rate.save
       redirect_to @rate
     else
