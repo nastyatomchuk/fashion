@@ -1,3 +1,3 @@
-class Currency < ApplicationRecord
+class Currency < ActiveRecord::Base
   has_many :rates
 end

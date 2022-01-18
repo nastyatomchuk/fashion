@@ -55,3 +55,5 @@ gem 'devise'
 gem 'bootstrap'
 
 gem 'carrierwave'
+
+gem 'simple_form'
