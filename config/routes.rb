@@ -3,23 +3,15 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :rates
   resources :products
   resources :users
+  resources :currency
+  resources :rates
 
+  get 'admin', to: 'welcome#i'
 
-  get  "users/:id" => "users#show"
-
-  # get 'persons/profile', as: 'user_root'
-
-  get 'admin' => 'welcome#i'
-
-  get 'admin/users' => 'users#index'
-
-  get 'admin/products' => 'products#index'
-
-  get "admin/currency" => "currency#index"
-
-  get "admin/rates" => "rates#index"
+  scope '/admin' do
+    resources :users, :products, :currency, :rates
+  end
 
 end
