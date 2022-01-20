@@ -3,10 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :products
-  resources :users
-  resources :currency
-  resources :rates
 
   get 'admin', to: 'welcome#i'
 

@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>currencies_id:</strong>
-  <%= @rate.title %>
+  <strong>FullName:</strong>
+  <%= @rate.rate %>
 </p>
 
-<p>
-  <strong>rate:</strong>
-  <%= @rate.description %>
-</p>
-
-<%= link_to 'Edit', edit_rate_path(@rate) %> |
-<%= link_to 'Back', products_path %>
+  <%= link_to 'Edit', edit_rates_path(@rate) %> |
+<%= link_to 'Back', users_path %>
