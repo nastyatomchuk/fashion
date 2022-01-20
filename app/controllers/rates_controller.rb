@@ -10,8 +10,6 @@ class RatesController < ApplicationController
     @currencies = Currency.all
   end
 
-  def show
-  end
 
   def create
     @rate = Rate.new(rate_params)
@@ -33,12 +31,6 @@ class RatesController < ApplicationController
       render :edit, status: :unprocessable_entity 
     end
   end
-
-  def destroy
-    @rate.destroy
-    redirect_to rates_url, notice: "Rate was successfully destroyed."
-  end
-
 
   private
   def set_rate

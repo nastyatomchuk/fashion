@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
   get 'admin', to: 'welcome#i'
 
   scope '/admin' do

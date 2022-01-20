@@ -12,14 +12,16 @@
   </thead>
 
   <tbody>
-  <% @currencies_rate = Currency.joins(:rates).select(:entity, :currency, :alphabetic_code, :rate) %>
-  <% @currencies_rate.each do |currencies_rate| %>
+  <% @currencies_rate = Currency.find_by_sql("select * from currencies inner join rates on currencies.id = rates.currency_id")%>
+  
+  <% @currencies_rate.each do |currency_rate| %>
     <tr>
-      <td><%= currencies_rate.entity %></td>
-      <td><%= currencies_rate.currency %></td>
-      <td><%= currencies_rate.alphabetic_code %></td>
-      <td><%= currencies_rate.rate %></td>       
-   </tr>
+      <td><%= currency_rate.entity %></td>
+      <td><%= currency_rate.currency %></td>
+      <td><%= currency_rate.alphabetic_code %></td>
+      <td><%= currency_rate.rate %></td>
+      <td><%= link_to 'Edit', edit_rate_path(currency_rate, currency_rate.id) %></td>     
+    </tr>
     <% end %>
   </tbody>
 </table>
