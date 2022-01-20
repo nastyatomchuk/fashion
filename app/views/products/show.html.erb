@@ -14,5 +14,13 @@
   <%= @product.description %>
 </p>
 
+
+  <% @cate =  Category.find_by_sql("select * from categories inner join products on categories.id = products.category_id where categories.id = #{@product.category_id}%")%>
+
+<p>
+  <strong>category:</strong>
+  <%= @cate %>
+</p>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
