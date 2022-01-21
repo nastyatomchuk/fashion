@@ -2,7 +2,7 @@ module RatesHelper
   def field_validity_class(model, attribute)
     return unless model.errors.include?(attribute)
 
-    "is-invalid"
+    'is-invalid'
   end
 
   def filed_errors(model, attribute)
