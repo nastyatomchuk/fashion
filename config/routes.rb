@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
-  root "welcome#i"
+  root "persons#profile"
 
-  get 'welcome', to: "welcome#i"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  resources :products
+  resources :users
+
+  get  "users/:id" => "users#show"
+
+  # get 'persons/profile', as: 'user_root'
+
+  get 'admin' => 'welcome#i'
+
+  get 'admin/users' => 'users#index'
+
+  get 'admin/products' => 'products#index'
+
+  get "admin/currency" => "currency#index"
+
+  get "admin/rate" => "rate#index"
+  get "admin/current_rate" => "rate#current_rate"
+
 end
