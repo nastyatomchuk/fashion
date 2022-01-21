@@ -15,7 +15,7 @@
 </p>
 
 
-  <% @cate =  Category.find_by_sql("select * from categories inner join products on categories.id = products.category_id where categories.id = #{@product.category_id}%")%>
+  <%# <% @cate =  Category.find_by_sql("select * from categories inner join products on categories.id = products.category_id where categories.id = #{@product.category_id}%")%> %>
 
 <p>
   <strong>category:</strong>

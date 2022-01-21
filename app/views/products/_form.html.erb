@@ -1,14 +1,19 @@
-<%= simple_form_for @product, defaults: { input_html: { class: 'mb-3' } } do |form| %>
-  <%= form.input :title, label: "Title", calss: "form-control #{field_validity_class(product, :title)}," %>
-  <%= filed_errors(product, :title) %>
+<%= simple_form_for @product, defaults: { input_html: { class: 'mb-3' } }, wrapper: :horizontal_form,  wrapper_mappings:{ file: :horizontal_file } do |form| %>
+  <div class="card mt-4">
+    <h5 class="card-header">New Product</h5>
+    <div class="card-body">
+        <%= form.input :title, label: "Title", calss: "form-control #{field_validity_class(product, :title)},"%>
+        <%= filed_errors(product, :title) %>
 
-  <%= form.input :description, label: "Description", class: "form-control #{field_validity_class(product, :description)}"  %>
-  <%= filed_errors(product, :description) %>
-  
-  <%= form.input :image, label: "Image", class: "form-control #{field_validity_class(product, :image)}" %>
-  <%= filed_errors(product, :image) %>
+        <%= form.input :description, label: "Description", class: "form-control #{field_validity_class(product, :description)}"  %>
+        <%= filed_errors(product, :description) %>
+        
+        <%= form.input :image, label: "Image", class: "form-control #{field_validity_class(product, :image)}" %>
+        <%= filed_errors(product, :image) %>
 
-  <%= form.association :category, label_method: :title, value_method: :id, include_blank: false, prompt: "< Choose category >" %>
+        <%= form.association :category, label_method: :title, value_method: :id, include_blank: false, prompt: "< Choose category >" %>
 
-  <%= form.button :submit, class: 'btn btn-primary' %>
+        <%= form.button :submit, class: "btn btn-primary btn-lg float-end" %>
+    </div>
+</div>
 <% end %>
