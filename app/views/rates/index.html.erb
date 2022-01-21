@@ -1,6 +1,6 @@
 <p><h1>Exchange rates of foreign currencies against the ruble</h1></p>
 
-<table class="table">
+<table class="table table-hover">
   <thead>
   <tr>
     <th>entity</th>
@@ -19,7 +19,7 @@
       <td><%= currency_rate.entity %></td>
       <td><%= currency_rate.currency %></td>
       <td><%= currency_rate.alphabetic_code %></td>
-      <td><%= currency_rate.rate %></td>
+      <td class="text-end"><%= currency_rate.rate %></td>
       <td><%= link_to 'Edit', edit_rate_path(currency_rate, currency_rate.id) %></td>     
     </tr>
     <% end %>
