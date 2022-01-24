@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  root "welcome#i"
+  root "persons#profile"
 
-  get 'welcome', to: "welcome#i"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  get 'admin', to: 'welcome#i'
+
+  scope '/admin' do
+    resources :users, :products, :currency, :rates
+  end
+
 end

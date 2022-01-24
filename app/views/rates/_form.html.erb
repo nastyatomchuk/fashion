@@ -1,0 +1,9 @@
+<%= simple_form_for @rate, wrapper: :horizontal_form do |form| %>
+  <%# <%= form.association :currency, label: "entity", collection: @currencies.order(:id), label_method: :id, prompt: "< Choose entity >"  %>
+  
+  <%= form.association :currency,  label_method: :entity, value_method: :id, include_blank: false, prompt: "< Choose entity >" %>
+  
+  <%= form.input :rate, label: "rate" %>
+
+  <%= form.button :submit%>
+<% end %>
