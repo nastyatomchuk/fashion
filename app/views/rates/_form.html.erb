@@ -1,0 +1,10 @@
+<%= simple_form_for @rate, defaults: { input_html: { class: 'mb-3' } }, wrapper: :horizontal_form,  wrapper_mappings:{ file: :horizontal_file } do |form| %>
+  <div class="card mt-4">
+    <h5 class="card-header">New Product</h5>
+    <div class="card-body">
+      <%= form.association :currency,  label_method: :entity, value_method: :id, include_blank: false, prompt: "< Choose entity >" %>
+      <%= form.input :rate, label: "rate" %>
+      <%= form.button :submit, class: "btn btn-primary btn-lg float-end" %>
+    </div>
+</div>
+<% end %>
