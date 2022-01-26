@@ -28,6 +28,6 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 end
 
-gem 'devise'
-gem 'pg'
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'pg', '~> 1.3'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
