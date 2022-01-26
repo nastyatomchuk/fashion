@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.3'
@@ -22,7 +23,7 @@ end
 group :development do
   gem 'capistrano-bundler', '~> 2.0.1', require: false
   gem 'capistrano-rails', '~> 1.6.1', require: false
-  gem 'capistrano-rvm', '~> 0.1.2',require: false
+  gem 'capistrano-rvm', '~> 0.1.2', require: false
   gem 'capistrano', '~> 3.16.0', require: false
   gem 'capistrano3-puma', '~> 5.2.0', require: false
   gem 'listen', '~> 3.3'
