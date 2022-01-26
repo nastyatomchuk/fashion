@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.3'
