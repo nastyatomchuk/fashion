@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, user]) do |form| %>
+
+  <%= form.label :"Full name" %>
+  <div class="input-group">
+    <%= form.text_field :full_name, class: "form-control #{field_validity_class(user, :full_name)}" %>
+    <%= filed_errors(user, :full_name) %>
+  </div>
+
+  <%= form.label :Phone %>
+  <div class="input-group">
+    <%= form.text_field :phone, class: "form-control #{field_validity_class(user, :phone)}" %>
+    <%= filed_errors(user, :phone) %>
+  </div>
+
+  <%= form.label :"Email address" %>
+  <div class="input-group">
+    <%= form.text_field :email, class: "form-control #{field_validity_class(user, :email)}" %>
+    <%= filed_errors(user, :email) %>
+  </div>
+
+  <%= form.label :Password %>
+  <div class="input-group">
+    <%= form.text_field :password, class: "form-control #{field_validity_class(user, :password)}" %>
+    <%= filed_errors(user, :password) %>
+  </div>
+
+  <div class="actions" align="center">
+    <%= form.submit :class=> "bnt btn-primary bnt-lg" %>
+  </div>
+<% end %>

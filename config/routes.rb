@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
+  root "persons#profile"
+
   devise_for :users
 
-   get 'persons/profile'
-
-   root "persons#profile"
-
-  # get 'welcome', to: "welcome#i"
-
-  get 'persons/profile', as: 'user_root'
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :users
+  end
 end
