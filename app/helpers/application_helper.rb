@@ -1,9 +1,7 @@
 module ApplicationHelper
   def flash_type(name)
-    if name == 'alert'
-      'error'
-    else
-      'success'
-    end
+    return 'success' if name == 'notice'
+    'error'
+    
   end
 end
