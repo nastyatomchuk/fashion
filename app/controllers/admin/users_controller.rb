@@ -43,7 +43,7 @@ module Admin
     private
 
     def load_user
-      @user = User.find.params[:id]
+      @user = User.find(params[:id])
     end
 
     def user_params
