@@ -17,13 +17,13 @@
         <td><%= user.full_name %></td>
         <td><%= user.phone %></td>
         <td><%= user.email %></td>
-<!--        <td><%#= link_to 'Show', user %></td>-->
-<!--        <td><%#= link_to 'Edit', edit_user_path(user) %></td>-->
-<!--        <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <td><%= link_to 'Show', admin_user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+        <td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
 
-<%#= link_to 'New user', new_user_path %>
+<%= link_to 'New user', new_admin_user_path %>
