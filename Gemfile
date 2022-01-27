@@ -54,4 +54,4 @@ gem 'devise'
 
 gem 'bootstrap'
 
-
+gem 'carrierwave'
