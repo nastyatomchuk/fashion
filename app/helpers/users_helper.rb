@@ -1,14 +1,8 @@
-module ApplicationHelper
-  def flash_type(name)
-    return 'success' if name == 'notice'
-
-    'error'
-  end
-
+module UsersHelper
   def field_validity_class(model, attribute)
     return unless model.errors.include?(attribute)
 
-    'is-invalid'
+      'is-invalid'
   end
 
   def filed_errors(model, attribute)
