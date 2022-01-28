@@ -1,19 +1,15 @@
-require 'csv'
 require_relative './data//currency.csv.csv'
 def seed_currency
   csv_file_path = './db/data/currency.csv'
-  puts 'Seeding users from #{csv_file_path}...'
-  f = File.new(csv_file_path, 'r')
-  csv = CSV.new(f)
-  headers = csv.shift
+  csv_file = File.new(csv_file_path, 'r')
+  csv_data = CSV.new(csv_file)
 
-  csv.each do |row|
+  csv_data.each do |row_data|
     currency_information = {
-      entity: row[0],
-      currency: row[1],
-      alphabetic_code: row[2],
+      entity: row_data[0],
+      currency: row_data[1],
+      alphabetic_code: row_data[2],
     }
-    inv = Currency.create(currency_information)
+    Currency.create(currency_information)
   end
-  puts 'Seeding users from #{csv_file_path} done.'
 end
