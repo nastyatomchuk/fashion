@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
 
-  resources :products
-
   namespace :admin do
+    resources :products
     resources :users
   end
 end
