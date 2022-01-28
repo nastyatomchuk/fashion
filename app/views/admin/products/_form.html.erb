@@ -12,12 +12,6 @@
     <%= filed_errors(product, :description) %>
   </div>
 
-  <%= form.label :Image %>
-  <div>
-    <%= form.file_field :image, class: "form-control #{field_validity_class(product, :image)}" %>
-    <%= filed_errors(product, :image) %>
-  </div>
-
   <div class="actions" align="center" style="margin-top: 20px">
     <%= form.submit :class=> "bnt btn-primary bnt-lg" %>
   </div>
