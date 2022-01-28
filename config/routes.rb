@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'persons/profile'
-
   root "persons#profile"
+  get  "users/:id" => "users#show"
+  get 'admin' => 'welcome#i'
 
 
-  get 'persons/profile', as: 'user_root'
-
-  get 'admin/products' => 'products#index'
+  namespace :admin do
+    resources :users, :products
+  end
 end
