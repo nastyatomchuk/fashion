@@ -3,7 +3,7 @@ module Admin
     before_action :load_product, only: %i[ show edit update destroy ]
 
     def index
-      @products = Product.order(:id)
+      @products = Product.order(:title)
     end
 
     def show
@@ -19,7 +19,7 @@ module Admin
     def create
       @product = Product.new(product_params)
       if @product.save
-        redirect_to admin_product_path, notice: "Product was successfully created."
+        redirect_to admin_products_path, notice: "Product was successfully created."
       else
         render :new, status: :unprocessable_entity
       end
@@ -35,7 +35,7 @@ module Admin
 
     def destroy
       @product.destroy
-      redirect_to admin_product_path, notice: "Product was successfully destroyed."
+      redirect_to admin_products_path, notice: "Product was successfully destroyed."
     end
 
     private
