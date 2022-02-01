@@ -15,11 +15,7 @@ class RateController < ApplicationController
       render :new
     end
   end
-
-  def current_rate
-
-  end
-
+  
   private
   def set_product
     @rate = Rate.find(params[:id])
