@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_152859) do
 
   create_table "currencies", force: :cascade do |t|
     t.string "entity"
-    t.string "currency"
+    t.string "currencies"
     t.string "alphabetic_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
