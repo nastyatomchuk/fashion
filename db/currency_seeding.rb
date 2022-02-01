@@ -1,5 +1,5 @@
 require 'csv'
-require_relative './data/currency.csv'
+require_relative './data//currency.csv.csv'
 def seed_currency
   csv_file_path = './db/data/currency.csv'
   puts 'Seeding users from #{csv_file_path}...'
