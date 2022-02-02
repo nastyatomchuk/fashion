@@ -1,0 +1,25 @@
+<p><h1>Current rates of foreign currencies against the ruble</h1></p>
+<% currency_rate = currency_rates %>
+<% currency_rate_last_update = currency_rate["time_last_update_utc"] %>
+<figcaption class="blockquote-footer">
+  <%= "Last update: #{currency_rate_last_update.to_s}" %>
+</figcaption>
+<br>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Currency code</th>
+    <th>Rate</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% currency_rate['conversion_rates'].each_pair do |key, value|  %>
+    <tr>
+      <td><%= key %></td>
+      <td><%= "#{'%.4f' % value}" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
