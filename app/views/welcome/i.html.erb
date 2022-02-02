@@ -6,9 +6,9 @@
      </a>
 
      <ul class="nav nav-pills">
-       <li class="nav-item"><a href="/admin/users" class="nav-link">Users</a></li>
-       <li class="nav-item"><a href="/admin/products" class="nav-link">Products</a></li>
-       <li class="nav-item"><a href="/admin/currency" class="nav-link">Currency</a></li>
+       <li class="nav-item"><%=link_to 'Users', admin_users_path, class: "nav-link" %></li>
+       <li class="nav-item"><%=link_to 'Products', admin_products_path, class: "nav-link" %></li>
+       <li class="nav-item"><%=link_to 'Currency', admin_currencies_path, class: "nav-link" %></li>
      </ul>
    </header>
  </div>
