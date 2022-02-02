@@ -1,0 +1,22 @@
+<h1>Currency</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Entity</th>
+    <th>Currency</th>
+    <th>Letter code</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @currencies.each do |currency| %>
+    <tr>
+      <td><%= currency.entity %></td>
+      <td><%= currency.currency %></td>
+      <td><%= currency.alphabetic_code %></td>
+   </tr>
+  <% end %>
+  </tbody>
+</table>
