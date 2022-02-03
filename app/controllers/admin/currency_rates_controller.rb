@@ -1,20 +1,20 @@
 module Admin
   class CurrencyRatesController < ApplicationController
-    before_action :load_rate, only: %i[ show edit update destroy ]
+    before_action :load_currency_rate, only: %i[ show edit update destroy ]
 
     def index
-      @rate = CurrencyRate.order(:rate)
+      @currency_rate = CurrencyRate.order(:rate)
     end
 
     def new
-      @rate = CurrencyRate.new
+      @currency_rate = CurrencyRate.new
       @currencies = Currency.order(:country)
     end
 
     def create
-      @rate = CurrencyRate.new(rate_params)
+      @currency_rate = CurrencyRate.new(rate_params)
 
-      if @rate.save
+      if @currency_rate.save
         redirect_to admin_currency_rates_path
       else
         render :new
@@ -25,7 +25,7 @@ module Admin
     end
 
     def update
-      if @rate.update(rate_params)
+      if @currency_rate.update(rate_params)
         redirect_to admin_currency_rates_path, notice: "CurrencyRate was successfully updated."
       else
         render :edit, status: :unprocessable_entity
@@ -33,13 +33,13 @@ module Admin
     end
 
     def destroy
-      @rate.destroy
+      @currency_rate.destroy
       redirect_to admin_currency_rates_path, notice: "CurrencyRate was successfully destroyed."
     end
 
     private
-    def load_rate
-      @rate = CurrencyRate.find(params[:id])
+    def load_currency_rate
+      @currency_rate = CurrencyRate.find(params[:id])
     end
 
     def rate_params
