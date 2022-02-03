@@ -1,0 +1,7 @@
+Entity,Currency,AlphabeticCode,NumericCode,MinorUnit,WithdrawalDate
+BELARUS,Belarusian Ruble,BYN,933,2,
+CANADA,Canadian Dollar,CAD,124,2,
+EUROPEAN UNION,Euro,EUR,978,2,
+UKRAINE,Hryvnia,UAH,980,2,
+RUSSIAN FEDERATION,Russian Ruble,RUR,810,,2004-01
+UNITED STATES OF AMERICA (THE),US Dollar,USD,840,2,
