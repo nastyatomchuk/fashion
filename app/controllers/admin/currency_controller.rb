@@ -1,7 +1,7 @@
 module Admin
   class CurrencyController < ApplicationController
     def index
-      @currency = Currency.order(:entity)
+      @currency = Currency.order(:country)
     end
 
     def new
@@ -23,7 +23,7 @@ module Admin
     end
 
     def currency_params
-      params.require(:currency).permit(:entity, :currency, :alphabetic_code)
+      params.require(:currency).permit(:country, :name, :code)
     end
   end
 end
