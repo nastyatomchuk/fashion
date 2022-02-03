@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Country</th>
+    <th>Currency name</th>
+    <th>Letter code</th>
+    <th>Rate</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @currency_rates.each do |currency_rate| %>
+    <tr>
+      <td><%= currency_rate.country %></td>
+      <td><%= currency_rate.name %></td>
+      <td><%= currency_rate.code %></td>
+      <td class="text-end"><%= currency_rate.rate %></td>
+      <td><%= link_to 'Edit', edit_admin_currency_rate_path(currency_rate, currency_rate.id) %></td>
+      <td><%= link_to 'Destroy', admin_currency_rate_path(currency_rate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New', new_admin_currency_rate_path %>

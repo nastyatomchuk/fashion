@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_151658) do
+ActiveRecord::Schema.define(version: 2022_02_03_151136) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2022_01_10_151658) do
     t.string "code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "currency_rates", force: :cascade do |t|
+    t.decimal "rate", precision: 7, scale: 4
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "currency_id"
+    t.index ["currency_id"], name: "index_currency_rates_on_currency_id"
   end
 
   create_table "products", force: :cascade do |t|

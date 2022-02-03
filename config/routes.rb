@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get 'admin' => 'welcome#i'
 
   namespace :admin do
+    resources :currencies
+    resources :currency_rates
     resources :products
     resources :users
-    resources :currencies
   end
 end
