@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :products
     resources :users
     resources :currency
-    resources :rates
+    resources :currency_rates
   end
 end

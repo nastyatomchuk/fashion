@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-  <% @currencies_rate = Currency.find_by_sql("select * from currencies inner join rates on currencies.id = rates.currency_id")%>
+  <% @currencies_rate = Currency.find_by_sql("select * from currencies inner join currency_rates on currencies.id = currency_rates.currency_id")%>
   
   <% @currencies_rate.each do |currency_rate| %>
     <tr>
@@ -18,8 +18,8 @@
       <td><%= currency_rate.name %></td>
       <td><%= currency_rate.code %></td>
       <td class="text-end"><%= currency_rate.rate %></td>
-      <td><%= link_to 'Edit', edit_admin_rate_path(currency_rate, currency_rate.id) %></td>
-      <td><%= link_to 'Destroy', admin_rate_path(currency_rate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Edit', edit_admin_currency_rate_path(currency_rate, currency_rate.id) %></td>
+      <td><%= link_to 'Destroy', admin_currency_rate_path(currency_rate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New', new_admin_rate_path %>
+<%= link_to 'New', new_admin_currency_rate_path %>
