@@ -1,9 +1,9 @@
 class CreateCurrencies < ActiveRecord::Migration[6.1]
   def change
     create_table :currencies do |t|
-      t.string :entity
-      t.string :currency
-      t.string :alphabetic_code
+      t.string :country
+      t.string :name
+      t.string :code
 
       t.timestamps
     end

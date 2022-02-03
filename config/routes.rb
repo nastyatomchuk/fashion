@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   get 'admin' => 'welcome#i'
 
   namespace :admin do
+    resources :currencies
+    resources :currency_rates
     resources :products
     resources :users
-    resources :currency
-    resources :rates
     get "current_rates" => "rates#current_rates"
   end
 end
