@@ -3,7 +3,7 @@ module Admin
     before_action :load_currency_rate, only: %i[ show edit update destroy ]
 
     def index
-      @currency_rates = CurrencyRate.order(:rate)
+      @currency_rates = Currency.find_by_sql("select * from currencies inner join currency_rates on currencies.id = currency_rates.currency_id")
     end
 
     def new
