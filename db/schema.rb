@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_152859) do
+ActiveRecord::Schema.define(version: 2022_01_10_151658) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,16 +40,10 @@ ActiveRecord::Schema.define(version: 2022_01_20_152859) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "currencies", force: :cascade do |t|
-    t.string "entity"
-    t.string "currency"
-    t.string "alphabetic_code"
+    t.string "country"
+    t.string "name"
+    t.string "code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,8 +54,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_152859) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.integer "category_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "rates", force: :cascade do |t|
