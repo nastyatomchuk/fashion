@@ -1,7 +1,7 @@
 module Admin
-  class CurrencyController < ApplicationController
+  class CurrenciesController < ApplicationController
     def index
-      @currency = Currency.order(:country)
+      @currencies = Currency.order(:country)
     end
 
     def new
