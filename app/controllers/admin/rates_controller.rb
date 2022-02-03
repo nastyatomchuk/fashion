@@ -8,7 +8,7 @@ module Admin
 
     def new
       @rate = Rate.new
-      @currencies = Currency.order(:entity)
+      @currencies = Currency.order(:country)
     end
 
     def create
