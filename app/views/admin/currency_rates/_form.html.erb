@@ -2,7 +2,7 @@
   <div class="card mt-4">
     <div class="card-body">
       <%= form.association :currency,  label_method: :country, value_method: :id, include_blank: false, prompt: "< Choose country >" %>
-      <%= form.input :rate, label: "rate" %>
+      <%= form.input :rate, label: "Rate" %>
       <%= form.button :submit, class: "btn btn-primary btn-lg float-end" %>
     </div>
 </div>
