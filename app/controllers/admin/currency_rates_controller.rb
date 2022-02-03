@@ -12,7 +12,7 @@ module Admin
     end
 
     def create
-      @currency_rates = CurrencyRate.new(rate_params)
+      @currency_rates = CurrencyRate.new(currency_rate_params)
 
       if @currency_rates.save
         redirect_to admin_currency_rates_path
@@ -25,8 +25,8 @@ module Admin
     end
 
     def update
-      if @currency_rates.update(rate_params)
-        redirect_to admin_currency_rates_path, notice: "CurrencyRate was successfully updated."
+      if @currency_rates.update(currency_rate_params)
+        redirect_to admin_currency_rates_path, notice: "Currency rate was successfully updated."
       else
         render :edit, status: :unprocessable_entity
       end
@@ -34,7 +34,7 @@ module Admin
 
     def destroy
       @currency_rates.destroy
-      redirect_to admin_currency_rates_path, notice: "CurrencyRate was successfully destroyed."
+      redirect_to admin_currency_rates_path, notice: "Currency rate was successfully destroyed."
     end
 
     private
@@ -42,7 +42,7 @@ module Admin
       @currency_rates = CurrencyRate.find(params[:id])
     end
 
-    def rate_params
+    def currency_rate_params
       params.require(:currency_rate).permit(:rate, :currency_id)
     end
   end
