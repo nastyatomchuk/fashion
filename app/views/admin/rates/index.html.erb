@@ -19,6 +19,7 @@
       <td><%= currency_rate.code %></td>
       <td class="text-end"><%= currency_rate.rate %></td>
       <td><%= link_to 'Edit', edit_admin_rate_path(currency_rate, currency_rate.id) %></td>
+      <td><%= link_to 'Destroy', admin_rate_path(currency_rate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
