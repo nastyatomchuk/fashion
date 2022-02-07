@@ -43,7 +43,7 @@ module Admin
     end
 
     def currency_rate_params
-      params.require(:currency_rate).permit(:rate, :source_id, :target_id, :rate_date)
+      params.require(:currency_rate).permit(:rate, :source, :target, :rate_date)
     end
   end
 end

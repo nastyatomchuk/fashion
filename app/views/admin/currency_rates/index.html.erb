@@ -12,10 +12,10 @@
   <tbody>
   <% @currency_rates.each do |currency_rate| %>
     <tr>
-      <td><%= currency_rate.source.code %></td>
-      <td><%= currency_rate.target.code %></td>
+      <td><%= currency_rate.source %></td>
+      <td><%= currency_rate.target %></td>
       <td class="text-end"><%= currency_rate.rate %></td>
-      <td><%= currency_rate.rate_date.to_formatted_s(:db) %></td>
+      <td><%= currency_rate.rate_date %></td>
       <td><%= link_to 'Edit', edit_admin_currency_rate_path(currency_rate, currency_rate.id) %></td>
       <td><%= link_to 'Destroy', admin_currency_rate_path(currency_rate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

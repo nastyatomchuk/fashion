@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 2022_02_07_094323) do
     t.decimal "rate", precision: 7, scale: 4
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "source_id"
-    t.integer "target_id"
-    t.datetime "rate_date"
+    t.string "source"
+    t.string "target"
+    t.date "rate_date"
   end
 
   create_table "products", force: :cascade do |t|
