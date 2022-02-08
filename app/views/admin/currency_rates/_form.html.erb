@@ -3,7 +3,7 @@
     <div class="card-body">
       <%= form.input :source, collection: Currency.all, label_method: :code, value_method: :code, prompt: "< Choose source currency >" %>
       <%= form.input :target, collection: Currency.all, label_method: :code, value_method: :code, prompt: "< Choose target currency >" %>
-      <%= form.input :rate %>
+      <%= form.input :rate, input_html: { min: '0' } %>
       <%= form.input :rate_date, as: :date, html5: true %>
       <%= form.button :submit, class: "btn btn-primary btn-lg float-end" %>
     </div>
