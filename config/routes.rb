@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "persons#profile"
+  root "home#index"
   get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
 
