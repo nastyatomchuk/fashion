@@ -6,10 +6,16 @@
     <%= filed_errors(product, :title) %>
   </div>
 
-  <%= form.label :Description %>
+  <%= form.label :Description%>
   <div class="input-group">
     <%= form.text_field :description, class: "form-control #{field_validity_class(product, :description)}" %>
     <%= filed_errors(product, :description) %>
+  </div>
+
+  <%= form.label :Image %>
+  <div>
+    <%= form.file_field :image, class: "form-control #{field_validity_class(product, :image)}" %>
+    <%= filed_errors(product, :image) %>
   </div>
 
   <div class="actions" align="center" style="margin-top: 20px">
