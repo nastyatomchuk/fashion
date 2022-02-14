@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users
 
   devise_scope :user do
     root to: 'welcome#i'
-    match '/login', to: 'devise/sessions#create', via: :post
+    match 'sing_in', to: 'users/sessions#create', via: :post
+    match '/users/sign_up', to: 'devise/registrations#create', via: :post
   end
 
-  # get  "users/:id" => "users#show"
+  get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
-  get 'login' => 'persons#profile'
 
   namespace :admin do
     resources :currencies
