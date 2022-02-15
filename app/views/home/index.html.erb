@@ -33,7 +33,7 @@
                 <!-- Single Prodect -->
                 <div class="product">
                   <div class="thumb">
-                    <a href="single-product.html" class="image">
+                    <a href="<%= home_path(product)%>" class="image">
                       <%= image_tag(product.image.url, alt: "Product image", size: "250x350") if product.image? %>
 <!--                      <img src="assets/images/product-image/1.jpg" alt="Product" />-->
 <!--                      <img class="hover-image" src="assets/images/product-image/2.jpg"-->
