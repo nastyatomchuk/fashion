@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root to: 'welcome#i'
     match 'sing_in', to: 'users/sessions#create', via: :post
     match '/users/sign_up', to: 'devise/registrations#create', via: :post
+    match '/users/password/new', to: 'devise/passwords#create', via: :post
   end
 
   get  "users/:id" => "users#show"
