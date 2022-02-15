@@ -35,25 +35,15 @@
               <div class="login-form-container">
                 <div class="login-register-form">
                   <form action="#" method="post">
-                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                       <%= render "devise/shared/error_messages", resource: resource %>
-                      <div class="field">
-                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"%>
-                      </div>
-                      <div class="field">
-                        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", placeholder: "Full name" %>
-                      </div>
-                      <div class="field">
-                        <%= f.text_field :phone, autofocus: true, autocomplete: "phone", placeholder: "Phone" %>
-                      </div>
-                      <div class="field">
-                        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
-                      </div>
-                      <div class="field">
-                        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation" %>
-                      </div>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+                      <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", placeholder: "Full name" %>
+                      <%= f.text_field :phone, autofocus: true, autocomplete: "phone", placeholder: "Phone" %>
+                      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation" %>
                       <div class="button-box">
-                        <button type="submit"><span>Registry</span></button>
+                        <button type="submit"><span>Login</span></button>
                       </div>
                     <% end %>
                   </form>
