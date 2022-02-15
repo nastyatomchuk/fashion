@@ -34,10 +34,8 @@
                 <div class="product">
                   <div class="thumb">
                     <a href="<%= home_path(product)%>" class="image">
-                      <%= image_tag(product.image.url, alt: "Product image", size: "250x350") if product.image? %>
-<!--                      <img src="assets/images/product-image/1.jpg" alt="Product" />-->
-<!--                      <img class="hover-image" src="assets/images/product-image/2.jpg"-->
-<!--                           alt="Product" />-->
+                      <%= image_tag(product.image.small_preview.url, alt: "Product image", size: "250x350") if product.image? %>
+<!--                      <img class="hover-image" src="assets/images/product-image/2.jpg" alt="Product" />-->
                     </a>
                     <div class="actions">
                       <a href="wishlist.html" class="action wishlist" title="Wishlist"><i

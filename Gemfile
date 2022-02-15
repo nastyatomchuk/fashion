@@ -5,7 +5,7 @@ ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
-gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave', '~> 2.0'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.3'
@@ -18,6 +18,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 5.0'
+gem "mini_magick", '~> 4.11'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
