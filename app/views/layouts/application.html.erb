@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="app/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="index.html"><%=image_tag "logo/logo.png" %></a>
                         </div>
                     </div>
                     <div class="col align-self-center d-none d-lg-block">
@@ -36,7 +36,7 @@
                                         <li><a href="blog-grid-right-sidebar.html">Accessories</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About us</a></li>
+                                <li><a href="<%= about_path %>">About us</a></li>
                                 <li><a href="contact.html">Contact us</a></li>
                             </ul>
                         </div>
@@ -88,7 +88,7 @@
                       <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
                         <div class="single-wedge">
                           <div class="footer-logo">
-                            <a href="index.html"><img src="assets/images/logo/logo-white.png" alt=""></a>
+                            <a href="index.html"><%=image_tag 'logo/logo-white.png' %></a>
                           </div>
                           <p class="about-text">Fashion is a form of self-expression and autonomy at a particular
                             period and place and in a specific context, of clothing,

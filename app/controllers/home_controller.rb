@@ -6,4 +6,7 @@ class HomeController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
+
+  def about
+  end
 end

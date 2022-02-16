@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "home#index"
   resources :home, only: [:index, :show]
+  get 'about' => 'home#about'
 
   get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
