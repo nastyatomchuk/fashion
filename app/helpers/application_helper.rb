@@ -18,4 +18,12 @@ module ApplicationHelper
       model.errors.full_messages_for(attribute).join(', ')
     end
   end
+
+  def current_cart
+    if Cart.find_by_id(session[:cart_id]).nil?
+      Cart.new
+    else
+      Cart.find_by_id(session[:cart_id])
+    end
+  end
 end
