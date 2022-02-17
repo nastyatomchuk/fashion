@@ -10,10 +10,6 @@ class Current_Currency_Rates_Service
   end
 
   def get_currency_rates
-
-    for_each rates do |rate|
-      api_url_string = api_url
-    end
     uri = URI(@api_url)
     response = Net::HTTP.get(uri)
     JSON.parse(response)

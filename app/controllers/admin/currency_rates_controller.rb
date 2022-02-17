@@ -45,5 +45,9 @@ module Admin
     def currency_rate_params
       params.require(:currency_rate).permit(:rate, :source, :target, :rate_date)
     end
+
+    def current_rates
+      @aee = "gver"
+    end
   end
 end
