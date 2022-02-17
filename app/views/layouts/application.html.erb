@@ -21,13 +21,13 @@
                 <div class="row">
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="app/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="<%=home_index_path %>"><%=image_tag "logo/fashion_logo.png" %></a>
                         </div>
                     </div>
                     <div class="col align-self-center d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="<%=home_index_path %>">Home</a></li>
                                 <li class="dropdown "><a href="#">Shop <i class="pe-7s-angle-down"></i></a>
                                     <ul class="sub-menu">
                                       <li><a href="blog-single.html">Clothes</a></li>
@@ -36,7 +36,7 @@
                                         <li><a href="blog-grid-right-sidebar.html">Accessories</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About us</a></li>
+                                <li><a href="<%= about_path %>">About us</a></li>
                                 <li><a href="contact.html">Contact us</a></li>
                             </ul>
                         </div>
@@ -88,7 +88,7 @@
                       <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
                         <div class="single-wedge">
                           <div class="footer-logo">
-                            <a href="index.html"><img src="assets/images/logo/logo-white.png" alt=""></a>
+                            <a href="<%=home_index_path %>"><%=image_tag 'logo/fashion_logo_negate.png' %></a>
                           </div>
                           <p class="about-text">Fashion is a form of self-expression and autonomy at a particular
                             period and place and in a specific context, of clothing,
@@ -105,7 +105,7 @@
                                     <div class="footer-row">
                                         <ul class="align-items-center">
                                           <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a></li>
-                                          <li class="li"><a class="single-link" href="about.html">About Us</a></li>
+                                          <li class="li"><a class="single-link" href="<%= about_path %>">About Us</a></li>
                                           <li class="li"><a class="single-link" href="contact.html">Contact us</a></li>
                                           <li class="li"><a class="single-link" href="login.html">Log in</a></li>
                                           <li class="li"><a class="single-link" href="#">Help</a></li>
