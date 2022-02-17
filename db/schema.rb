@@ -72,6 +72,9 @@ ActiveRecord::Schema.define(version: 2022_02_16_115710) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "currency_id"
+    t.string "source"
+    t.string "target"
+    t.date "rate_date"
     t.index ["currency_id"], name: "index_currency_rates_on_currency_id"
   end
 
