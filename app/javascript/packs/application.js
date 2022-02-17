@@ -23,3 +23,7 @@ $(document).on('turbolinks:load', function(){
         text: $('#flash_message').text()
     }).show();
 })
+
+$(document).on('turbolinks:load', function(){
+    $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+});

@@ -1,9 +1,11 @@
-<%= simple_form_for [:admin, @currency_rates], defaults: { input_html: { class: 'mb-3' } }, wrapper: :horizontal_form,  wrapper_mappings:{ file: :horizontal_file } do |form| %>
+<%= simple_form_for [:admin, @currency_rates], defaults: { input_html: { class: 'mb-3' } }, wrapper: :horizontal_form do |form| %>
   <div class="card mt-4">
     <div class="card-body">
-      <%= form.association :currency,  label_method: :country, value_method: :id, include_blank: false, prompt: "< Choose country >" %>
-      <%= form.input :rate, label: "Rate" %>
+      <%= form.input :source, collection: Currency.order(:country), label_method: :code, value_method: :code, prompt: "< Choose source currency >" %>
+      <%= form.input :target, collection: Currency.order(:country), label_method: :code, value_method: :code, prompt: "< Choose target currency >" %>
+      <%= form.input :rate, input_html: { min: '0', placeholder:  "000.0000"} %>
+      <%= form.input :rate_date, as: :date, html5: true %>
       <%= form.button :submit, class: "btn btn-primary btn-lg float-end" %>
     </div>
-</div>
+  </div>
 <% end %>
