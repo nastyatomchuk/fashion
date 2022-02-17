@@ -3,7 +3,7 @@ module Admin
     before_action :load_currency_rate, only: %i[ show edit update destroy ]
 
     def index
-      @currency_rates = CurrencyRate.all
+      @currency_rates = CurrencyRate.order(:rate_date)
     end
 
     def new
