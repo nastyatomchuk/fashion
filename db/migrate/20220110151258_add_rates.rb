@@ -5,6 +5,5 @@ class AddRates < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_reference :rates, :currency
   end
 end
