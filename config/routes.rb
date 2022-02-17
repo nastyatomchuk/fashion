@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :currency_rates
     resources :products
     resources :users
+    get "current_rates" => "rates#current_rates"
   end
 end
