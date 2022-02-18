@@ -1,6 +1,6 @@
 module Admin
   class CurrencyRatesController < ApplicationController
-    before_action :load_currency_rate, only: %i[show edit update destroy]
+    before_action :load_currency_rate, only: %i[ show edit update destroy ]
 
     def index
       @currency_rates = CurrencyRate.order(:rate_date)
