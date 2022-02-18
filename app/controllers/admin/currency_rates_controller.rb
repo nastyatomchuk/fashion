@@ -37,6 +37,10 @@ module Admin
       redirect_to admin_currency_rates_path, notice: "Currency rate was successfully destroyed."
     end
 
+    def current_rates
+     CurrentRates.call(@currencies)
+    end
+
     private
     def load_currency_rate
       @currency_rates = CurrencyRate.find(params[:id])
@@ -44,10 +48,6 @@ module Admin
 
     def currency_rate_params
       params.require(:currency_rate).permit(:rate, :source, :target, :rate_date)
-    end
-
-    def current_rates
-      @aee = "gver"
     end
   end
 end
