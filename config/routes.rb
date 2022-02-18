@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :currencies
     resources :currency_rates
+    post 'current_rates', to: 'currency_rates#current_rates'
     resources :products
     resources :users
-    get "current_rates" => "rates#current_rates"
   end
 end

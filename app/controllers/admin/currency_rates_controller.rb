@@ -13,7 +13,6 @@ module Admin
 
     def create
       @currency_rates = CurrencyRate.new(currency_rate_params)
-
       if @currency_rates.save
         redirect_to admin_currency_rates_path
       else
@@ -35,6 +34,11 @@ module Admin
     def destroy
       @currency_rates.destroy
       redirect_to admin_currency_rates_path, notice: "Currency rate was successfully destroyed."
+    end
+
+    def current_rates
+      CurrencyRatesService.new(Currency.pluck(:code)).call
+      redirect_to admin_currency_rates_path
     end
 
     private
