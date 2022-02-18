@@ -1,6 +1,6 @@
 module Admin
   class CurrencyRatesController < ApplicationController
-    before_action :load_currency_rate, only: %i[ show edit update destroy ]
+    before_action :load_currency_rate, only: %i[show edit update destroy]
 
     def index
       @currency_rates = CurrencyRate.order(:rate_date)
@@ -13,7 +13,6 @@ module Admin
 
     def create
       @currency_rates = CurrencyRate.new(currency_rate_params)
-
       if @currency_rates.save
         redirect_to admin_currency_rates_path
       else
@@ -38,7 +37,8 @@ module Admin
     end
 
     def current_rates
-     CurrentRates.call(@currencies)
+      CurrencyRatesService.new(Currency.pluck(:code)).call
+      redirect_to admin_currency_rates_path
     end
 
     private
