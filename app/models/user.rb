@@ -8,4 +8,10 @@ class User < ApplicationRecord
          :validatable
 
   validates :full_name, :phone, presence: true
+
+  belongs_to  :role
+
+  def is_admin?
+    role.name == 'admin'
+  end
 end
