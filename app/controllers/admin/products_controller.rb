@@ -1,6 +1,7 @@
 module Admin
   class ProductsController < ApplicationController
     before_action :load_product, only: %i[ show edit update destroy ]
+    layout 'admin'
 
     def index
       @products = Product.order(:title)

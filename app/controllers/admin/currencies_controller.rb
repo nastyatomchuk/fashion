@@ -1,5 +1,7 @@
 module Admin
   class CurrenciesController < ApplicationController
+    layout 'admin'
+
     def index
       @currencies = Currency.order(:country)
     end

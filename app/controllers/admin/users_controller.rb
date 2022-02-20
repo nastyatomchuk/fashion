@@ -1,6 +1,7 @@
 module Admin
   class UsersController < ApplicationController
     before_action :load_user, only: %i[show edit update destroy]
+    layout 'admin'
 
     def index
       @users = User.order(:full_name)
