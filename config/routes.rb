@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show'
   get 'admin', to: 'admin#index'
 
-  resources :admins
 
   namespace :admin do
     get '/', to: 'admin#index'
