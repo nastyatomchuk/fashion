@@ -44,22 +44,21 @@
                     <!-- Header Action Start -->
                     <div class="col col-lg-auto align-self-center pl-0">
                         <div class="header-actions">
-                            <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
-                                data-bs-target="#loginActive">Sign In</a>
-                            <!-- Single Wedge Start -->
+                          <% if user_signed_in? %>
+                            <span>Здравствуйте, <%= current_user.email %></span>
+                            <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, class: "header-action-btn login-btn" %>
+                          <% else %>
+                            <%= link_to 'Sign In', new_user_session_path, class: "header-action-btn login-btn" %>
+                          <% end %>
                             <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
                                 <i class="pe-7s-search"></i>
                             </a>
-                            <!-- Single Wedge End -->
-                            <!-- Single Wedge Start -->
                             <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
                                 <i class="pe-7s-like"></i>
                             </a>
-                            <!-- Single Wedge End -->
                             <a href="#offcanvas-cart"
                                 class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                 <i class="pe-7s-shopbag"></i>
-<!--                                 <span class="cart-amount">€30.00</span>-->
                             </a>
                             <a href="#offcanvas-mobile-menu"
                                 class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
