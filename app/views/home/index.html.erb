@@ -33,27 +33,24 @@
                 <!-- Single Prodect -->
                 <div class="product">
                   <div class="thumb">
-                    <a href="<%= home_path(product)%>" class="image">
+                    <a href="<%= home_path(product) %>" class="image">
                       <%= image_tag(product.image.small_preview.url, alt: "Product image", size: "250x350") if product.image? %>
                     </a>
                     <div class="actions">
                       <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
                         class="pe-7s-like"></i></a>
-                      <a href="#" class="action quickview" data-link-action="quickview"
-                         title="Quick view" data-bs-toggle="modal"
+                      <a href="<%= home_path(product) %>" class="action quickview"
+                         title="Quick view"
                          data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                      <a href="compare.html" class="action compare" title="Compare"><i
-                        class="pe-7s-refresh-2"></i></a>
                     </div>
                     <%= form_with model: @cart_item do |f| %>
                       <%= f.hidden_field :product_id, value: product.id %>
                       <%= f.number_field :quantity, value: 1, min: 1%>
                       <%= f.submit "Add To Cart" %>
                     <% end %>
-
                   </div>
                   <div class="content">
-                    <h5 class="title"><a href="single-product.html"><%=product.title%>
+                    <h5 class="title"><a href="<%= home_path(product) %>"><%=product.title%>
                     </a>
                     </h5>
                     <span class="price">
