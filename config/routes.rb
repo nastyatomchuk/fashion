@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'order/show'
   get 'cart_items/create'
   get 'cart_items/update'
   get 'cart_items/destroy'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :cart_items
   get 'cart' => 'cart#show'
-  get 'order' => 'order#show'
+  get 'order', to: 'order#show'
 
   get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
