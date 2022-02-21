@@ -4,9 +4,11 @@ module Admin
 
     def index
       @products = Product.order(:title)
+
     end
 
     def show
+      @cate =  Category.find_by(id: @product.category_id)
     end
 
     def new
@@ -44,7 +46,7 @@ module Admin
       end
 
       def product_params
-        params.require(:product).permit(:title, :description, :image)
+        params.require(:product).permit(:title, :description, :image, :category_id)
       end
   end
 end

@@ -1,16 +1,22 @@
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<div class="row justify-content-center">
+  <div class="card">
+    <div class="row g-0  ">
+      <div class="col-md-4">
+        <%= image_tag(@product.image.url, alt: 'Image', :size => "250x330") if @product.image? %>
+      </div>
+      <div class="col-md-auto">
+        <div class="card-body">
+          <h5 class="card-title"> <%= @product.title %> </h5>
+          <p class="card-text"> <%= @product.description %> </p>
+          <p>
+            <strong>Category:</strong>
+            <%= @cate.name %>
+          </p>
+          <%= link_to 'Edit', edit_admin_product_path(@product), class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <%= image_tag(@product.image.url, alt: 'Image', :size => "250x350") if @product.image? %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<%= link_to 'Edit', edit_admin_product_path(@product) %> |
 <%= link_to 'Back', admin_products_path %>

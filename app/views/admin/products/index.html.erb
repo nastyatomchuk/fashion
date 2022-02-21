@@ -1,29 +1,32 @@
 <h1>Products</h1>
 
-<table class="table table-sm table-striped ml-4">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @products.each do |product| %>
+    <div class="col">
+      <div class="card h-100">
+      <%= image_tag(product.image.url, alt: 'Image', :size => "150x200") if product.image? %>
+      <div class="card-body">
+        <h5 class="card-title"><%= product.title %></h5>
+        <p class="card-text"><%= truncate(product.description, length: 150) %></p>
+        <div class="card-footer">
+          <%= link_to 'Show', admin_product_path(product) %>
+          <%= link_to 'Edit', edit_admin_product_path(product) %>
+          <%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= truncate(product.description, length: 150) %></td>
-        <td><%= image_tag(product.image.url, alt: 'Image', :size => "150x200") if product.image? %></td>
-        <td><%= link_to 'Show', admin_product_path(product) %></td>
-        <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
-        <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+    <%# @products.each do |product| %>
+<!--      <tr>-->
+<!--        <td><%#= product.title %></td>-->
+<!--        <td><%#= truncate(product.description, length: 150) %></td>-->
+<!--        <td><%#= image_tag(product.image.url, alt: 'Image', :size => "150x200") if product.image? %></td>-->
+<!--        <td><%#= link_to 'Show', admin_product_path(product) %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_admin_product_path(product) %></td>-->
+<!--        <td><%#= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+<!--      </tr>-->
 
 <%= link_to 'New Product', new_admin_product_path %>
