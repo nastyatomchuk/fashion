@@ -47,14 +47,12 @@
                 <td class="product-price-cart"><span class="amount"></span></td>
                 <td class="product-quantity">
                   <div class="cart-plus-minus">
-                    <%= f.number_field :quantity, value: item.quantity.to_i, class: "cart-plus-minus-box"%>
+                    <%= f.number_field :quantity, value: item.quantity.to_i, min:1, class: "cart-plus-minus-box"%>
                   </div>
                 </td>
                 <td class="product-subtotal"></td>
                 <td class="product-remove">
-                  <a href="<%=cart_items_update_path(item) %>"><i class="fa fa-pencil"></i></a>
                   <%= link_to "", item, method: :delete, remote: true, class: "fa fa-times" %>
-                  <%#= link_to "", item, method: :put, class: "fa fa-pencil" %>
                 </td>
               </tr>
                 <% end%>
