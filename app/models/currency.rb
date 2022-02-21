@@ -1,5 +1,5 @@
 class Currency < ApplicationRecord
   has_many :currency_rates
 
-  validates :entity, :currency, :alphabetic_code, presence: true
+  validates :country, :name, :code, presence: true
 end

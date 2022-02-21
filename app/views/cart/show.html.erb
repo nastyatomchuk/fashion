@@ -6,7 +6,7 @@
         <h2 class="breadcrumb-title">Shop</h2>
         <!-- breadcrumb-list start -->
         <ul class="breadcrumb-list">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="<%=home_index_path %>">Home</a></li>
           <li class="breadcrumb-item active">Cart</li>
         </ul>
         <!-- breadcrumb-list end -->
@@ -33,7 +33,7 @@
                 <th>Price</th>
                 <th>Qty</th>
                 <th>Subtotal</th>
-                <th>Action</th>
+                <th colspan="2" >Action</th>
               </tr>
               </thead>
               <tbody>
@@ -41,16 +41,19 @@
                 <%= form_with model: item do |f|%>
               <tr>
                 <td class="product-thumbnail">
-                  <a href="#"><%= image_tag(item.product.image.small_preview.url, alt: "Product image", size: "250x350") if item.product.image? %></a>
+                  <a href="<%= home_path(item.product.id)%>"><%= image_tag(item.product.image.url, alt: "Product image", size: "250x350") if item.product.image? %></a>
                 </td>
-                <td class="product-name"><a href="#"><%= item.product.title%></a></td>
-                <td class="product-price-cart"><span class="amount"></span></td>
+                <td class="product-name"><a href="<%= home_path(item.product.id)%>"><%= item.product.title%></a></td>
+                <td class="product-price-cart"><span class="amount"><%= f.label :product_id, value: item.product.id %></span></td>
                 <td class="product-quantity">
                   <div class="cart-plus-minus">
                     <%= f.number_field :quantity, value: item.quantity.to_i, min:1, class: "cart-plus-minus-box"%>
                   </div>
                 </td>
                 <td class="product-subtotal"></td>
+                <td class="product-remove">
+                  <%= f.submit "Update", class: "btn btn-light" %>
+                </td>
                 <td class="product-remove">
                   <%= link_to "", item, method: :delete, remote: true, class: "fa fa-times" %>
                 </td>
@@ -60,7 +63,7 @@
               </tbody>
               <tfoot>
               <tr>
-                <td colspan="6", align="right"><h3>Your current order has a total of: <%= CartItem.all.count %> items</h3></td>
+                <td colspan="6" align="right"><h5>Your current order has a total of: <%= CartItem.all.count %> items</h5></td>
               </tr>
               </tfoot>
             </table>
@@ -69,10 +72,10 @@
             <div class="col-lg-12">
               <div class="cart-shiping-update-wrapper">
                 <div class="cart-shiping-update">
-                  <a href="#">Continue Shopping</a>
+                  <a href="<%=home_index_path %>">Continue Shopping</a>
                 </div>
                 <div class="cart-clear">
-                  <button>Update Shopping Cart</button>
+                  <a href="<%= cart_path %>">Update Shopping Cart</a>
                   <a href="#">Clear Shopping Cart</a>
                 </div>
               </div>

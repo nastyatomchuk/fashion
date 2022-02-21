@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 2022_02_16_115710) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -72,6 +75,9 @@ ActiveRecord::Schema.define(version: 2022_02_16_115710) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "currency_id"
+    t.string "source"
+    t.string "target"
+    t.date "rate_date"
     t.index ["currency_id"], name: "index_currency_rates_on_currency_id"
   end
 
