@@ -44,7 +44,7 @@
                   <a href="<%= home_path(item.product.id)%>"><%= image_tag(item.product.image.url, alt: "Product image", size: "250x350") if item.product.image? %></a>
                 </td>
                 <td class="product-name"><a href="<%= home_path(item.product.id)%>"><%= item.product.title%></a></td>
-                <td class="product-price-cart"><span class="amount"><%= f.label :product_id, value: item.product.id %></span></td>
+                <td class="product-price-cart"><span class="amount"></span></td>
                 <td class="product-quantity">
                   <div class="cart-plus-minus">
                     <%= f.number_field :quantity, value: item.quantity.to_i, min:1, class: "cart-plus-minus-box"%>

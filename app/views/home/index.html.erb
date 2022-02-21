@@ -45,13 +45,12 @@
                     </div>
                     <%= form_with model: @cart_item do |f| %>
                       <%= f.hidden_field :product_id, value: product.id %>
-                      <%= f.number_field :quantity, value: 1, min: 1%>
-                      <%= f.submit "Add To Cart" %>
+                      <%= f.hidden_field :quantity, value: 1 %>
+                      <%= f.submit "Add To Cart", class: "add-to-cart" %>
                     <% end %>
                   </div>
                   <div class="content">
-                    <h5 class="title"><a href="<%= home_path(product) %>"><%=product.title%>
-                    </a>
+                    <h5 class="title"><a href="<%= home_path(product) %>"><%=product.title%></a>
                     </h5>
                     <span class="price">
                         <span class="new">$38.50</span>
