@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
 
   get 'users/:id', to: 'users#show'
-  get 'admin', to: 'admin#index'
-
 
   namespace :admin do
-    get '/', to: 'admin#index'
+    get '/', to: 'home#index'
     resources :currencies
     resources :currency_rates
     resources :products
