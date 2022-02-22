@@ -1,0 +1,8 @@
+Date:  26-09-2021
+
+Version: 2.0
+
+===================
+
+01. Bootstrap Framework 5.0.2 to 5.1.1 Update
+02. Update - minor css issue fixed
