@@ -24,8 +24,16 @@ module ApplicationHelper
   end
 
   def add_button_right(url)
-    link_to icon('fa-solid fa-circle-plus', 'Add row') + " Add row",
+    link_to icon('fa-solid fa-circle-plus') + " Add row",
       url, class: 'btn btn-primary btn-lg float-end'
+  end
+
+  def edit_button(url)
+    link_to icon('fa fa-pencil'), url
+  end
+
+  def destroy_button(url, method)
+    link_to icon('fa fa-times'), url, method: :delete, data: { confirm: 'Are you sure?' }
   end
 
 end
