@@ -4,7 +4,9 @@
 </p>
 
 <p>
-  <%= image_tag(@product.image.url, alt: 'Image', :size => "250x350") if @product.image? %>
+  <% @product.images.each do |image| %>
+    <%= image_tag(image.small_preview.url, alt: 'Image') if @product.image? %>
+  <%end %>
 </p>
 
 <p>
