@@ -49,9 +49,9 @@
             <div class="col">
               <div class="tab-content">
                 <div class="tab-pane fade show active" id="shop-list">
-                  <div class="shop-list-wrapper">
-                    <div class="row">
-                      <% @products.each do |product| %>
+                  <% @products.each do |product| %>
+                    <div class="shop-list-wrapper">
+                      <div class="row">
                         <div class="col-md-5 col-lg-5 col-xl-4">
                           <div class="product">
                             <div class="thumb">
@@ -76,9 +76,9 @@
                             </div>
                           </div>
                         </div>
-                      <%end %>
+                      </div>
                     </div>
-                  </div>
+                  <%end %>
                 </div>
               </div>
             </div>
