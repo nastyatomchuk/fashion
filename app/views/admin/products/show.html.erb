@@ -5,8 +5,8 @@
 
 <p>
   <% @product.images.each do |image| %>
-    <%= image_tag(image.small_preview.url, alt: 'Image') if @product.image? %>
-  <%end %>
+    <%= image_tag(image.url, alt: 'Image') if @product.image? %>
+  <% end %>
 </p>
 
 <p>
