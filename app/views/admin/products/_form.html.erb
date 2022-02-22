@@ -2,13 +2,13 @@
   <%= form.input :title, label: "Title", calss: "form-control #{field_validity_class(product, :title)},"%>
   <%= filed_errors(product, :title) %>
 
-  <%= form.input :price, label: "Price", class: "form-control #{field_validity_class(product, :price)}"  %>
+  <%= form.input :price, label: "Price", class: "form-control #{field_validity_class(product, :price)}", input_html: { min: '0', placeholder:  "000.0000"}  %>
   <%= filed_errors(product, :price) %>
 
   <%= form.input :description, label: "Description", class: "form-control #{field_validity_class(product, :description)}"  %>
   <%= filed_errors(product, :description) %>
 
-  <%= form.input :store_qty, label: "Quantity", class: "form-control #{field_validity_class(product, :store_qty)}"  %>
+  <%= form.input :store_qty, label: "Quantity", class: "form-control #{field_validity_class(product, :store_qty)}", input_html: { min: '1'} %>
   <%= filed_errors(product, :store_qty) %>
 
   <%= form.input :image, label: "Image", class: "form-control #{field_validity_class(product, :image)}" %>
