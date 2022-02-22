@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :cart_items
   get 'cart' => 'cart#show'
   get 'order', to: 'order#show'
+  get 'show', to: 'products#index'
 
   get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
