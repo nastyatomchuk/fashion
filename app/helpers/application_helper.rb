@@ -18,4 +18,14 @@ module ApplicationHelper
       model.errors.full_messages_for(attribute).join(', ')
     end
   end
+
+  def icon(classes, title = nil, style = nil, id = nil)
+    content_tag :i, '', class: "#{classes}", title: title, style: style, id: id
+  end
+
+  def add_button_right(url)
+    link_to icon('fa-solid fa-circle-plus', 'Add row') + " Add row",
+      url, class: 'btn btn-primary btn-lg float-end'
+  end
+
 end

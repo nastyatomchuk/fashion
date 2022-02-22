@@ -1,8 +1,7 @@
-<h1>Products</h1>
+<%= add_button_right(new_admin_product_path) %>
+<h1>Products (<%= @products.size %>)</h1>
 
-<%= link_to 'New Product', new_admin_product_path, class: "btn btn-primary float-end" %>
-
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Title</th>
