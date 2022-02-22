@@ -1,5 +1,5 @@
 module Admin
-  class UsersController < ApplicationController
+  class UsersController < AdminController
     before_action :load_user, only: %i[show edit update destroy]
 
     def index

@@ -1,5 +1,5 @@
 module Admin
-  class CurrencyRatesController < ApplicationController
+  class CurrencyRatesController < AdminController
     before_action :load_currency_rate, only: %i[ show edit update destroy ]
 
     def index

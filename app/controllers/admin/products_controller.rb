@@ -1,5 +1,5 @@
 module Admin
-  class ProductsController < ApplicationController
+  class ProductsController < AdminController
     before_action :load_product, only: %i[ show edit update destroy ]
 
     def index

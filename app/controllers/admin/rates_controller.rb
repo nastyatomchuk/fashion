@@ -1,5 +1,5 @@
 module Admin
-  class RatesController < ApplicationController
+  class RatesController < AdminController
     def current_rates
     end
   end
