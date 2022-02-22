@@ -21,7 +21,7 @@
         <td><%= product.id %></td>
         <td><%= edit_button(edit_admin_product_path(product)) %></td>
         <td><%= link_to  product.title, admin_product_path(product) %></td>
-        <td><%=image_tag(product.images.first.url, :size => "50x50") %></td>
+        <td><%= image_tag(product.images.first.url, :size => "50x50") %></td>
         <td><%= truncate(product.description, length: 150) %></td>
         <td><%= product.price %></td>
         <td><%= product.store_qty %></td>
