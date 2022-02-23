@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_132528) do
+ActiveRecord::Schema.define(version: 2022_02_22_140716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 2022_02_22_132528) do
     t.decimal "price"
     t.integer "store_qty"
     t.string "images", default: [], array: true
+    t.string "sku"
+    t.float "rate"
   end
 
   create_table "spatial_ref_sys", primary_key: "srid", id: :integer, default: nil, force: :cascade do |t|
