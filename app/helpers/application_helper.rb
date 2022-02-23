@@ -18,4 +18,21 @@ module ApplicationHelper
       model.errors.full_messages_for(attribute).join(', ')
     end
   end
+
+  def icon(classes, title = nil, style = nil, id = nil)
+    content_tag :i, '', class: "#{classes}", title: title, style: style, id: id
+  end
+
+  def new_right_button(url)
+    link_to icon('fa-solid fa-circle-plus') + " New",
+            url, class: 'btn btn-primary btn-lg btn-min-120 float-end'
+  end
+
+  def edit_button(url)
+    link_to icon('fa fa-pencil'), url
+  end
+
+  def destroy_button(url, method)
+    link_to icon('fa fa-times'), url, method: :delete, data: { confirm: 'Are you sure?' }
+  end
 end
