@@ -1,5 +1,5 @@
-<%= simple_form_for [:admin, @product], defaults: { input_html: { class: 'mb-3' } }, wrapper: :horizontal_form,  wrapper_mappings:{ file: :horizontal_file } do |form| %>
-  <%= form.input :title, label: "Title", calss: "form-control #{field_validity_class(product, :title)},"%>
+<%= simple_form_for [:admin, @product], defaults: { input_html: { class: 'mb-3' } }, wrapper: :vertical_form do |form| %>
+  <%= form.input :title, label: "Title", class: "form-control #{field_validity_class(product, :title)},"%>
   <%= filed_errors(product, :title) %>
 
   <%= form.input :price, label: "Price", class: "form-control #{field_validity_class(product, :price)}", input_html: { min: '0', placeholder:  "000.0000"}  %>
@@ -11,9 +11,12 @@
   <%= form.input :store_qty, label: "Quantity", class: "form-control #{field_validity_class(product, :store_qty)}", input_html: { min: '1'} %>
   <%= filed_errors(product, :store_qty) %>
 
-  <%= form.file_field :images, label: "Image", class: "form-control #{field_validity_class(product, :images)}", multiple: true %>
-  <%= filed_errors(product, :images) %>
-
-  <%= form.button :submit, class: "btn btn-primary " %>
-  <%= link_to 'Back', admin_products_path, class: "btn btn-secondary" %>
+  <%= form.input :images, label: "Images", class: "form-control" do %>
+    <%= form.file_field :images, label: "Image", class: "form-control #{field_validity_class(product, :images)}", multiple: true %>
+    <%= filed_errors(product, :images) %>
+  <% end %>
+  <div class="form-actions">
+    <%= form.button :submit, value: 'OK', class: "btn btn-primary btn-min-120" %>
+    <%= link_to 'Cancel', admin_products_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>
+  </div>
 <%end %>

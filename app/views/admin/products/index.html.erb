@@ -1,8 +1,9 @@
-<%= add_button_right(new_admin_product_path) %>
-<h1>Products (<%= @products.size %>)</h1>
+<div class="dictionary">
+  <%= new_right_button(new_admin_product_path) %>
+  <h1>Products (<%= @products.size %>)</h1>
 
-<table class="table table-bordered">
-  <thead>
+  <table class="table table-bordered">
+    <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
@@ -11,9 +12,9 @@
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @products.each do |product| %>
       <tr>
 
@@ -31,8 +32,8 @@
         <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
-<br>
 

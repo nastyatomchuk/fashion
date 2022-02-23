@@ -23,9 +23,8 @@ module ApplicationHelper
     content_tag :i, '', class: "#{classes}", title: title, style: style, id: id
   end
 
-  def add_button_right(url)
-    link_to icon('fa-solid fa-circle-plus', 'Add row') + " Add row",
-      url, class: 'btn btn-primary btn-lg float-end'
+  def new_right_button(url)
+    link_to icon('fa-solid fa-circle-plus') + " New",
+            url, class: 'btn btn-primary btn-lg btn-min-120 float-end'
   end
-
 end
