@@ -19,13 +19,13 @@
       <% @products.each do |product| %>
         <tr>
           <td class="text-end"><%= product.id %></td>
-          <td><%= edit_button(edit_admin_product_path(product)) %></td>
+          <td><%= edit_link(edit_admin_product_path(product)) %></td>
           <td class="text-nowrap"><%= link_to  product.title, admin_product_path(product) %></td>
           <td><%= image_tag(product.images.first.url, :size => "50x50") %></td>
           <td><%= truncate(product.description, length: 150) %></td>
           <td class="text-end"><%= in_dollars(product.price) %></td>
           <td class="text-end"><%= product.store_qty %></td>
-          <td><%= destroy_button(admin_product_path(product), 'delete') %></td>
+          <td><%= destroy_link(admin_product_path(product)) %></td>
         </tr>
       <% end %>
     </tbody>

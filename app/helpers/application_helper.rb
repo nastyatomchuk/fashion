@@ -28,11 +28,11 @@ module ApplicationHelper
             url, class: 'btn btn-primary btn-lg btn-min-120 float-end'
   end
 
-  def edit_button(url)
+  def edit_link(url)
     link_to icon('fa fa-pencil'), url
   end
 
-  def destroy_button(url, method)
+  def destroy_link(url)
     link_to icon('fa fa-times'), url, method: :delete, data: { confirm: 'Are you sure?' }
   end
 
