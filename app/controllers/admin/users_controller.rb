@@ -6,9 +6,6 @@ module Admin
       @users = User.order(:full_name)
     end
 
-    def show
-    end
-
     def new
       @user = User.new
     end
