@@ -17,6 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# Igone .DS_Dtore files in any directory and subdirectories
+.DS_Store
+
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
