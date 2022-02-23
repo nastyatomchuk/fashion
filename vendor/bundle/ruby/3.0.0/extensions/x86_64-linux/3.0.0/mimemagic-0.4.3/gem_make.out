@@ -1,0 +1,3 @@
+current directory: /home/nastya/apps/fashion/vendor/bundle/ruby/3.0.0/gems/mimemagic-0.4.3/ext/mimemagic
+/usr/share/rvm/rubies/ruby-3.0.2/bin/ruby -I/usr/share/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0 -rrubygems /home/nastya/apps/fashion/vendor/bundle/ruby/3.0.0/gems/rake-13.0.6/exe/rake RUBYARCHDIR\=/home/nastya/apps/fashion/vendor/bundle/ruby/3.0.0/extensions/x86_64-linux/3.0.0/mimemagic-0.4.3 RUBYLIBDIR\=/home/nastya/apps/fashion/vendor/bundle/ruby/3.0.0/extensions/x86_64-linux/3.0.0/mimemagic-0.4.3
+mkdir -p /home/nastya/apps/fashion/vendor/bundle/ruby/3.0.0/extensions/x86_64-linux/3.0.0/mimemagic-0.4.3/mimemagic
