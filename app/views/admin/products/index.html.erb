@@ -21,10 +21,10 @@
         <tr>
           <td class = "table-col-width"><%= product.id %></td>
           <td class = "table-col-width"><%= edit_button(edit_admin_product_path(product)) %></td>
-          <td><%= link_to  product.title, admin_product_path(product) %></td>
+          <td nowrap><%= link_to  product.title, admin_product_path(product) %></td>
           <td class = "table-col-width"><%= image_tag(product.images.first.url, :size => "50x50") %></td>
           <td><%= truncate(product.description, length: 150) %></td>
-          <td class = "table-text-align-right"><%= product.price %></td>
+          <td class = "table-text-align-right" nowrap>$ <%= product.price %></td>
           <td class = "table-col-width"><%= product.store_qty %></td>
           <td class = "table-col-width"><%= destroy_button(admin_product_path(product), 'delete') %></td>
         </tr>
