@@ -6,9 +6,6 @@ module Admin
       @users = User.order(:full_name)
     end
 
-    def show
-    end
-
     def new
       @user = User.new
     end
@@ -37,7 +34,7 @@ module Admin
 
     def destroy
       @user.destroy
-      redirect_to admin_user_path, notice: "User was successfully destroyed."
+      redirect_to admin_users_path, notice: "User was successfully destroyed."
     end
 
     private
@@ -47,7 +44,7 @@ module Admin
     end
 
     def user_params
-      params.require(:user).permit(:full_name, :phone, :email, :password, :id)
+      params.require(:user).permit(:full_name, :phone, :email, :password, :password_confirmation)
     end
   end
 end
