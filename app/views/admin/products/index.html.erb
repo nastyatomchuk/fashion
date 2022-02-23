@@ -5,27 +5,27 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>ID</th>
-        <th></th>
-        <th>Title</th>
-        <th></th>
+        <th class="th-18 text-nowrap">ID</th>
+        <th class="th-18"></th>
+        <th class="text-nowrap th-18">Title</th>
+        <th class="th-18"></th>
         <th>Description</th>
         <th>Price</th>
-        <th>Qty</th>
-        <th></th>
+        <th class="th-18">Qty</th>
+        <th class="th-18"></th>
       </tr>
     </thead>
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td class = "table-col-width"><%= product.id %></td>
-          <td class = "table-col-width"><%= edit_button(edit_admin_product_path(product)) %></td>
-          <td nowrap><%= link_to  product.title, admin_product_path(product) %></td>
-          <td class = "table-col-width"><%= image_tag(product.images.first.url, :size => "50x50") %></td>
+          <td class="text-end"><%= product.id %></td>
+          <td><%= edit_button(edit_admin_product_path(product)) %></td>
+          <td class="text-nowrap"><%= link_to  product.title, admin_product_path(product) %></td>
+          <td><%= image_tag(product.images.first.url, :size => "50x50") %></td>
           <td><%= truncate(product.description, length: 150) %></td>
-          <td class = "table-text-align-right" nowrap><%= id_dollars(product.price) %></td>
-          <td class = "table-col-width"><%= product.store_qty %></td>
-          <td class = "table-col-width"><%= destroy_button(admin_product_path(product), 'delete') %></td>
+          <td class="text-end"><%= in_dollars(product.price) %></td>
+          <td class="text-end"><%= product.store_qty %></td>
+          <td><%= destroy_button(admin_product_path(product), 'delete') %></td>
         </tr>
       <% end %>
     </tbody>

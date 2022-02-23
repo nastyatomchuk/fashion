@@ -36,7 +36,7 @@ module ApplicationHelper
     link_to icon('fa fa-times'), url, method: :delete, data: { confirm: 'Are you sure?' }
   end
 
-  def id_dollars(price)
+  def in_dollars(price)
     number_to_currency(price)
   end
 end
