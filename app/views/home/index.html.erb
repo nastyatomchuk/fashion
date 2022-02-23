@@ -34,7 +34,7 @@
                 <div class="product">
                   <div class="thumb">
                     <a href="<%= home_path(product)%>" class="image">
-                      <%= image_tag(product.image.small_preview.url, alt: "Product image", size: "250x350") if product.image? %>
+                      <%= image_tag(product.images.first.url, alt: "Product image", size: "250x350") if product.image? %>
 <!--                      <img class="hover-image" src="assets/images/product-image/2.jpg" alt="Product" />-->
                     </a>
                     <div class="actions">

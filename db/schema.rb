@@ -13,10 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_02_22_140716) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
-  enable_extension "pg_trgm"
   enable_extension "plpgsql"
-  enable_extension "postgis"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,22 +43,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_140716) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "cart_items", force: :cascade do |t|
-    t.integer "quantity"
-    t.bigint "product_id", null: false
-    t.bigint "cart_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
-    t.index ["product_id"], name: "index_cart_items_on_product_id"
-  end
-
-  create_table "carts", force: :cascade do |t|
-    t.decimal "total"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "currencies", force: :cascade do |t|
     t.string "country"
     t.string "name"
@@ -89,15 +70,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_140716) do
     t.integer "store_qty"
     t.string "images", default: [], array: true
     t.string "sku"
-    t.float "rate"
-  end
-
-  create_table "spatial_ref_sys", primary_key: "srid", id: :integer, default: nil, force: :cascade do |t|
-    t.string "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string "srtext", limit: 2048
-    t.string "proj4text", limit: 2048
-    t.check_constraint "(srid > 0) AND (srid <= 998999)", name: "spatial_ref_sys_srid_check"
+    t.integer "rate"
   end
 
   create_table "users", force: :cascade do |t|
@@ -116,6 +89,4 @@ ActiveRecord::Schema.define(version: 2022_02_22_140716) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "cart_items", "carts"
-  add_foreign_key "cart_items", "products"
 end
