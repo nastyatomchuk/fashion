@@ -35,4 +35,8 @@ module ApplicationHelper
   def destroy_button(url, method)
     link_to icon('fa fa-times'), url, method: :delete, data: { confirm: 'Are you sure?' }
   end
+
+  def id_dollars(price)
+    number_to_currency(price)
+  end
 end
