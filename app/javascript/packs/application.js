@@ -24,6 +24,6 @@ $(document).on('turbolinks:load', function(){
     }).show();
 })
 
-$(document).on('turbolinks:load', function(){
-    $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
-});
+// $(document).on('turbolinks:load', function(){
+//     $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+// });
