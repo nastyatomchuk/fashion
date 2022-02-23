@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
 
   get 'users/:id', to: 'users#show'
+  resources :products
 
   namespace :admin do
     get '/', to: 'home#index'

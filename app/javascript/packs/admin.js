@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/js/all"
 import "bootstrap"
 import Noty from 'noty'
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -18,6 +19,6 @@ $(document).on('turbolinks:load', function(){
     }).show();
 })
 
-$(document).on('turbolinks:load', function(){
-    $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
-});
+// $(document).on('turbolinks:load', function(){
+//     $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+// });

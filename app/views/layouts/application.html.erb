@@ -15,64 +15,65 @@
    </div>
    <% end %>
 
- <header>
-        <div class="header-main sticky-nav ">
-            <div class="container position-relative">
-                <div class="row">
-                    <div class="col-auto align-self-center">
-                        <div class="header-logo">
-                            <a href="<%=home_index_path %>"><%=image_tag "logo/fashion_logo.png" %></a>
-                        </div>
-                    </div>
-                    <div class="col align-self-center d-none d-lg-block">
-                        <div class="main-menu">
-                            <ul>
-                                <li><a href="<%=home_index_path %>">Home</a></li>
-                                <li class="dropdown "><a href="#">Shop <i class="pe-7s-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                      <li><a href="blog-single.html">Clothes</a></li>
-                                        <li><a href="blog-grid.html">Dresses</a></li>
-                                        <li><a href="blog-grid-left-sidebar.html">Shoes</a></li>
-                                        <li><a href="blog-grid-right-sidebar.html">Accessories</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="<%= about_path %>">About us</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Header Action Start -->
-                    <div class="col col-lg-auto align-self-center pl-0">
-                        <div class="header-actions">
-                            <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
-                                data-bs-target="#loginActive">Sign In</a>
-                            <!-- Single Wedge Start -->
-                            <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
-                                <i class="pe-7s-search"></i>
-                            </a>
-                            <!-- Single Wedge End -->
-                            <!-- Single Wedge Start -->
-                            <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
-                                <i class="pe-7s-like"></i>
-                            </a>
-                            <!-- Single Wedge End -->
-                            <a href="#offcanvas-cart"
-                                class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
-                                <i class="pe-7s-shopbag"></i>
-<!--                                 <span class="cart-amount">€30.00</span>-->
-                            </a>
-                            <a href="#offcanvas-mobile-menu"
-                                class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
-                                <i class="pe-7s-menu"></i>
-                            </a>
-                        </div>
-                        <!-- Header Action End -->
-                    </div>
-                </div>
-            </div>
+  <header>
+    <div class="header-main sticky-nav ">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-auto align-self-center">
+              <div class="header-logo">
+                  <a href="<%=home_index_path %>"><%=image_tag "logo/fashion_logo.png" %></a>
+              </div>
+          </div>
+          <div class="col align-self-center d-none d-lg-block">
+              <div class="main-menu">
+                  <ul>
+                      <li><a href="<%=home_index_path %>">Home</a></li>
+                      <li class="dropdown "><a href="#">Shop <i class="pe-7s-angle-down"></i></a>
+                          <ul class="sub-menu">
+                            <li><a href="blog-single.html">Clothes</a></li>
+                              <li><a href="blog-grid.html">Dresses</a></li>
+                              <li><a href="blog-grid-left-sidebar.html">Shoes</a></li>
+                              <li><a href="blog-grid-right-sidebar.html">Accessories</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="<%= about_path %>">About us</a></li>
+                      <li><a href="contact.html">Contact us</a></li>
+                  </ul>
+              </div>
+          </div>
+          <!-- Header Action Start -->
+          <div class="col col-lg-auto align-self-center pl-0">
+              <div class="header-actions">
+                  <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
+                      data-bs-target="#loginActive">Sign In</a>
+                  <!-- Single Wedge Start -->
+                  <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
+                      <i class="pe-7s-search"></i>
+                  </a>
+                  <!-- Single Wedge End -->
+                  <!-- Single Wedge Start -->
+                  <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                      <i class="pe-7s-like"></i>
+                  </a>
+                  <!-- Single Wedge End -->
+                  <a href="#offcanvas-cart"
+                      class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                      <i class="pe-7s-shopbag"></i>
+  <!--                                 <span class="cart-amount">€30.00</span>-->
+                  </a>
+                  <a href="#offcanvas-mobile-menu"
+                      class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                      <i class="pe-7s-menu"></i>
+                  </a>
+              </div>
+              <!-- Header Action End -->
+          </div>
         </div>
-    </header>
-</div>
+      </div>
+    </div>
+  </header>
+
+  <%= yield(:breadcrumbs) %>
 
   <div class ="container">
       <%= yield %>
