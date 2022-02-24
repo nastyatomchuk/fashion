@@ -11,6 +11,7 @@ import "bootstrap"
 import Noty from 'noty'
 import "@fortawesome/fontawesome-free/css/all"
 import "pixeden-stroke-7-icon"
+import Swiper from 'swiper'
 
 Rails.start()
 Turbolinks.start()

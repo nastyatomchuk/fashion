@@ -24,20 +24,34 @@
         <!-- Swiper -->
         <div class="swiper-container zoom-top">
           <div class="swiper-wrapper">
-            <%@product.images.each do |image| %>
-              <div class="swiper-slide zoom-image-hover">
-                <img class="img-responsive m-auto" src="<%=image.url %>" alt="">
-              </div>
-            <%end %>
+            <div class="swiper-slide zoom-image-hover">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
+            <div class="swiper-slide zoom-image-hover">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
+            <div class="swiper-slide zoom-image-hover">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
+            <div class="swiper-slide zoom-image-hover">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
           </div>
         </div>
         <div class="swiper-container zoom-thumbs mt-3 mb-3">
           <div class="swiper-wrapper">
-            <%@product.images.each do |image| %>
             <div class="swiper-slide">
-              <img class="img-responsive m-auto" src="<%=image.url%>" alt="">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
             </div>
-            <%end %>
+            <div class="swiper-slide">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="img-responsive m-auto" src="<%=@product.images.first.url %>" alt="">
+            </div>
           </div>
         </div>
       </div>
