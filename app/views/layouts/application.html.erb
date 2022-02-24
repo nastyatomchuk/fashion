@@ -1,149 +1,150 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Fashion</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
-<% flash.each do |name, message| %>
-  <div id="flash_message" style="display: none" flash-type="<%= flash_type(name) %>">
-    <%= message %>
-  </div>
-<% end %>
+  <head>
+    <title>Fashion</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+   <% flash.each do |name, message| %>
+   <div id="flash_message" style="display: none" flash-type="<%= flash_type(name) %>">
+      <%= message %>
+   </div>
+   <% end %>
 
-<header>
-  <div class="header-main sticky-nav ">
-    <div class="container position-relative">
-      <div class="row">
-        <div class="col-auto align-self-center">
-          <div class="header-logo">
-            <a href="<%=home_index_path %>"><%=image_tag "logo/fashion_logo.png" %></a>
-          </div>
-        </div>
-        <div class="col align-self-center d-none d-lg-block">
-          <div class="main-menu">
-            <ul>
-              <li><a href="<%=home_index_path %>">Home</a></li>
-              <li class="dropdown "><a href="#">Shop <i class="pe-7s-angle-down"></i></a>
-                <ul class="sub-menu">
-                  <li><a href="blog-single.html">Clothes</a></li>
-                  <li><a href="blog-grid.html">Dresses</a></li>
-                  <li><a href="blog-grid-left-sidebar.html">Shoes</a></li>
-                  <li><a href="blog-grid-right-sidebar.html">Accessories</a></li>
-                </ul>
-              </li>
-              <li><a href="<%= about_path %>">About us</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- Header Action Start -->
-        <div class="col col-lg-auto align-self-center pl-0">
-          <div class="header-actions">
-            <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
-               data-bs-target="#loginActive">Sign In</a>
-            <!-- Single Wedge Start -->
-            <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
-              <i class="pe-7s-search"></i>
-            </a>
-            <!-- Single Wedge End -->
-            <!-- Single Wedge Start -->
-            <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
-              <i class="pe-7s-like"></i>
-            </a>
-            <!-- Single Wedge End -->
-            <a href="#offcanvas-cart"
-               class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
-              <i class="pe-7s-shopbag"></i>
-              <!--                                 <span class="cart-amount">€30.00</span>-->
-            </a>
-            <a href="#offcanvas-mobile-menu"
-               class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
-              <i class="pe-7s-menu"></i>
-            </a>
-          </div>
-          <!-- Header Action End -->
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<%= yield(:breadcrumbs) %>
-
-<div class ="container">
-  <%= yield %>
-</div>
-
-<!-- Footer Area Start -->
-<div class="footer-area m-lrb-30px">
-  <div class="footer-container">
-    <div class="footer-top">
-      <div class="container">
+  <header>
+    <div class="header-main sticky-nav ">
+      <div class="container position-relative">
         <div class="row">
-          <!-- Start single blog -->
-          <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
-            <div class="single-wedge">
-              <div class="footer-logo">
-                <a href="<%=home_index_path %>"><%=image_tag 'logo/fashion_logo_negate.png' %></a>
+          <div class="col-auto align-self-center">
+              <div class="header-logo">
+                  <a href="<%=home_index_path %>"><%=image_tag "logo/fashion_logo.png" %></a>
               </div>
-              <p class="about-text">Fashion is a form of self-expression and autonomy at a particular
-                period and place and in a specific context, of clothing,
-                footwear, lifestyle, accessories and body posture.
-              </p>
-            </div>
           </div>
-          <!-- End single blog -->
-          <!-- Start single blog -->
-          <div class="col-md-3 col-sm-6 col-lg-2 mb-md-30px mb-lm-30px pl-lg-50px">
-            <div class="single-wedge">
-              <h4 class="footer-herading">Quick Links</h4>
-              <div class="footer-links">
-                <div class="footer-row">
-                  <ul class="align-items-center">
-                    <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a></li>
-                    <li class="li"><a class="single-link" href="<%= about_path %>">About Us</a></li>
-                    <li class="li"><a class="single-link" href="contact.html">Contact us</a></li>
-                    <li class="li"><a class="single-link" href="login.html">Log in</a></li>
-                    <li class="li"><a class="single-link" href="#">Help</a></li>
+          <div class="col align-self-center d-none d-lg-block">
+              <div class="main-menu">
+                  <ul>
+                      <li><a href="<%=home_index_path %>">Home</a></li>
+                      <li class="dropdown "><a href="#">Shop <i class="pe-7s-angle-down"></i></a>
+                          <ul class="sub-menu">
+                            <li><a href="blog-single.html">Clothes</a></li>
+                              <li><a href="blog-grid.html">Dresses</a></li>
+                              <li><a href="blog-grid-left-sidebar.html">Shoes</a></li>
+                              <li><a href="blog-grid-right-sidebar.html">Accessories</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="<%= about_path %>">About us</a></li>
+                      <li><a href="contact.html">Contact us</a></li>
                   </ul>
-                </div>
               </div>
-            </div>
           </div>
-          <!-- End single blog -->
-          <!-- Start single blog -->
-          <div class="col-md-4 col-lg-3 col-sm-6">
-            <div class="single-wedge">
+          <!-- Header Action Start -->
+          <div class="col col-lg-auto align-self-center pl-0">
+              <div class="header-actions">
+                  <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
+                      data-bs-target="#loginActive">Sign In</a>
+                  <!-- Single Wedge Start -->
+                  <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
+                      <i class="pe-7s-search"></i>
+                  </a>
+                  <!-- Single Wedge End -->
+                  <!-- Single Wedge Start -->
+                  <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                      <i class="pe-7s-like"></i>
+                  </a>
+                  <!-- Single Wedge End -->
+                  <a href="#offcanvas-cart"
+                      class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                      <i class="pe-7s-shopbag"></i>
+  <!--                                 <span class="cart-amount">€30.00</span>-->
+                  </a>
+                  <a href="#offcanvas-mobile-menu"
+                      class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                      <i class="pe-7s-menu"></i>
+                  </a>
+              </div>
+              <!-- Header Action End -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-              <h4 class="footer-herading">Store Information.</h4>
-              <div class="footer-links">
-                <!-- News letter area -->
-                <p class="phone">Phone:<a href="tel:0123456789"> +375297757459</a></p>
-                <p class="mail">Email:<a href="mailto:tomchuk.stasy@gmail.com"> tomchuk.stasy@gmail.com</a></p>
-                <!-- News letter area  End -->
-              </div>
-            </div>
-          </div>
-          <!-- End single blog -->
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <p class="copy-text"> © 2022 <strong>tomchuk-fashion.ru</strong> Made With <i class="fa fa-heart" aria-hidden="true"></i> By  <strong> Anastasia Tomchuk </strong>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <%= yield(:breadcrumbs) %>
+
+  <div class ="container">
+      <%= yield %>
   </div>
-</div>
-<!-- Footer Area End -->
-</body>
+
+  <!-- Footer Area Start -->
+    <div class="footer-area m-lrb-30px">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                      <!-- Start single blog -->
+                      <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
+                        <div class="single-wedge">
+                          <div class="footer-logo">
+                            <a href="<%=home_index_path %>"><%=image_tag 'logo/fashion_logo_negate.png' %></a>
+                          </div>
+                          <p class="about-text">Fashion is a form of self-expression and autonomy at a particular
+                            period and place and in a specific context, of clothing,
+                            footwear, lifestyle, accessories and body posture.
+                          </p>
+                        </div>
+                      </div>
+                      <!-- End single blog -->
+                        <!-- Start single blog -->
+                        <div class="col-md-3 col-sm-6 col-lg-2 mb-md-30px mb-lm-30px pl-lg-50px">
+                            <div class="single-wedge">
+                                <h4 class="footer-herading">Quick Links</h4>
+                                <div class="footer-links">
+                                    <div class="footer-row">
+                                        <ul class="align-items-center">
+                                          <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a></li>
+                                          <li class="li"><a class="single-link" href="<%= about_path %>">About Us</a></li>
+                                          <li class="li"><a class="single-link" href="contact.html">Contact us</a></li>
+                                          <li class="li"><a class="single-link" href="login.html">Log in</a></li>
+                                          <li class="li"><a class="single-link" href="#">Help</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End single blog -->
+                        <!-- Start single blog -->
+                        <div class="col-md-4 col-lg-3 col-sm-6">
+                            <div class="single-wedge">
+
+                                <h4 class="footer-herading">Store Information.</h4>
+                                <div class="footer-links">
+                                    <!-- News letter area -->
+                                    <p class="phone">Phone:<a href="tel:0123456789"> +375297757459</a></p>
+                                    <p class="mail">Email:<a href="mailto:tomchuk.stasy@gmail.com"> tomchuk.stasy@gmail.com</a></p>
+                                    <!-- News letter area  End -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End single blog -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p class="copy-text"> © 2022 <strong>tomchuk-fashion.ru</strong> Made With <i class="fa fa-heart"
+                                    aria-hidden="true"></i> By  <strong> Anastasia Tomchuk </strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Area End -->
+  </body>
 </html>
