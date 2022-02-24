@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_084550) do
+ActiveRecord::Schema.define(version: 2022_02_22_140716) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
-  enable_extension "pg_trgm"
   enable_extension "plpgsql"
-  enable_extension "postgis"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -62,12 +59,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_084550) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "currencies", force: :cascade do |t|
     t.string "country"
     t.string "name"
@@ -91,19 +82,11 @@ ActiveRecord::Schema.define(version: 2022_02_22_084550) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.decimal "price"
+    t.decimal "price", precision: 7, scale: 4
     t.integer "store_qty"
     t.string "images", default: [], array: true
     t.string "sku"
-    t.float "rate"
-  end
-
-  create_table "spatial_ref_sys", primary_key: "srid", id: :integer, default: nil, force: :cascade do |t|
-    t.string "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string "srtext", limit: 2048
-    t.string "proj4text", limit: 2048
-    t.check_constraint "(srid > 0) AND (srid <= 998999)", name: "spatial_ref_sys_srid_check"
+    t.integer "rate"
   end
 
   create_table "users", force: :cascade do |t|

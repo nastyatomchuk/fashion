@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get  "users/:id" => "users#show"
   get 'admin' => 'welcome#i'
 
+  resources :products
+
   namespace :admin do
     get '/', to: 'home#index'
     resources :currencies

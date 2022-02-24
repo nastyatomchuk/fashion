@@ -15,6 +15,7 @@
    </div>
    <% end %>
 
+
  <header>
         <div class="header-main sticky-nav ">
             <div class="container position-relative">
@@ -72,8 +73,11 @@
                 </div>
             </div>
         </div>
-    </header>
-</div>
+      </div>
+    </div>
+  </header>
+
+  <%= yield(:breadcrumbs) %>
 
   <div class ="container">
       <%= yield %>

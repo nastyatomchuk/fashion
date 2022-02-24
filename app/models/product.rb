@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-<<<<<<< HEAD
   mount_uploaders :images, ImageUploader
 
   validates :title, :description, :price, :store_qty, :sku, presence: true
