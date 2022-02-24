@@ -34,8 +34,8 @@
                 <div class="product">
                   <div class="thumb">
                     <a href="<%= home_path(product)%>" class="image">
-                      <%= image_tag(product.images.first.url, alt: "Product image", size: "250x350") if product.image? %>
-<!--                      <img class="hover-image" src="assets/images/product-image/2.jpg" alt="Product" />-->
+                      <%#= image_tag(product.images.first.url, alt: "Product image", size: "250x350") if product.image? %>
+                      <img class="img-responsive m-auto" src="<%=product.images.first.url %>" alt="Product" />
                     </a>
                     <div class="actions">
                       <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
@@ -50,11 +50,11 @@
                       To Cart</button>
                   </div>
                   <div class="content">
-                    <h5 class="title"><a href="single-product.html"><%=product.title%>
+                    <h5 class="title"><a href="<%= home_path(product)%>"><%=product.title%>
                     </a>
                     </h5>
                     <span class="price">
-                        <span class="new">$38.50</span>
+                        <span class="new"><%=product.price%></span>
                     </span>
                   </div>
                 </div>
