@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   resources :cart_items
   get 'cart' => 'cart#show'
 
-  get  "users/:id" => "users#show"
-  get 'admin' => 'welcome#i'
-
   namespace :admin do
     get '/', to: 'home#index'
     resources :currencies
