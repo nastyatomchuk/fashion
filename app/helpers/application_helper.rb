@@ -47,4 +47,6 @@ module ApplicationHelper
       Cart.find_by_id(session[:cart_id])
     end
   end
+
+
 end
