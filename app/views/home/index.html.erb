@@ -33,8 +33,7 @@
                 <!-- Single Prodect -->
                 <div class="product">
                   <div class="thumb">
-                    <a href="<%= home_path(product)%>" class="image">
-                      <%#= image_tag(product.images.first.url, alt: "Product image", size: "250x350") if product.image? %>
+                    <a href="<%= product_path(product) %>" class="image">
                       <img class="img-responsive m-auto" src="<%=product.images.first.url %>" alt="Product" />
                     </a>
                     <div class="actions">
