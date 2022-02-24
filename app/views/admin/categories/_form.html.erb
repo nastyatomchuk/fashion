@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @category], defaults: { input_html: { class: 'mb-3' } }, wrapper: :horizontal_form do |form| %>
+  <div class="card mt-4">
+    <div class="card-body">
+      <%= form.input :name %>
+      <%= form.button :submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

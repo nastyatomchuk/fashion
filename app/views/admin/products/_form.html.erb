@@ -22,6 +22,9 @@
     <%= filed_errors(product, :images) %>
   <% end %>
 
+  <%= form.association :category, label_method: :name, value_method: :id, prompt: "< Choose category >" %>
+  <%= form.button :submit, class: "btn btn-primary " %>
+
   <div class="form-actions">
     <%= form.button :submit, value: 'OK', class: "btn btn-primary btn-min-120" %>
     <%= link_to 'Cancel', admin_products_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>

@@ -1,0 +1,26 @@
+<div class="dictionary">
+  <%= new_right_button(new_admin_category_path) %>
+  <h1>Categories (<%= @categories.size %>)</h1>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th class="th-18 text-nowrap">ID</th>
+      <th class="th-18"></th>
+      <th class="text-nowrap th-18">Title</th>
+      <th class="th-18"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.id %></td>
+        <td><%= edit_link(edit_admin_category_path(category)) %></td>
+        <td><%= category.name %></td>
+        <td><%= destroy_link(admin_category_path(category)) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
