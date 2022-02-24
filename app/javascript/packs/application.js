@@ -11,6 +11,8 @@ import "bootstrap"
 import Noty from 'noty'
 import "@fortawesome/fontawesome-free/css/all"
 import "pixeden-stroke-7-icon"
+import Swiper from "swiper";
+import "jquery-zoom";
 
 Rails.start()
 Turbolinks.start()
@@ -22,8 +24,26 @@ $(document).on('turbolinks:load', function(){
         theme: 'bootstrap-v4',
         text: $('#flash_message').text()
     }).show();
-})
+
 
 // $(document).on('turbolinks:load', function(){
 //     $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
 // });
+
+    var zoomThumb = new Swiper('.zoom-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+    var zoomTop = new Swiper('.zoom-top', {
+        spaceBetween: 0,
+        slidesPerView: 1,
+        thumbs: {
+            swiper: zoomThumb
+        }
+    });
+
+    $('.zoom-image-hover').zoom();
+})

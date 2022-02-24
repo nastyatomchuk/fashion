@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :home, only: [:index, :show]
   get 'about', to: 'home#about'
 
+  resources :products
+
   namespace :admin do
     get '/', to: 'home#index'
     resources :currencies
