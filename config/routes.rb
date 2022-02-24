@@ -3,7 +3,14 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :home, only: [:index, :show]
+
   get 'about', to: 'home#about'
+
+  resources :cart_items
+  get 'cart' => 'cart#show'
+
+  get  "users/:id" => "users#show"
+  get 'admin' => 'welcome#i'
 
   namespace :admin do
     get '/', to: 'home#index'
