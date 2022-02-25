@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :home, only: [:index, :show]
+
   get 'about', to: 'home#about'
+
+  resources :cart_items
+  get 'cart' => 'cart#show'
 
   resources :products
 

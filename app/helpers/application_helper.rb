@@ -39,4 +39,12 @@ module ApplicationHelper
   def in_dollars(price)
     number_to_currency(price)
   end
+
+  def current_cart
+    if Cart.find_by_id(session[:cart_id]).nil?
+      Cart.new
+    else
+      Cart.find_by_id(session[:cart_id])
+    end
+  end
 end

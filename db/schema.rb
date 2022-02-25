@@ -43,6 +43,22 @@ ActiveRecord::Schema.define(version: 2022_02_22_140716) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "product_id", null: false
+    t.bigint "cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.decimal "total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "currencies", force: :cascade do |t|
     t.string "country"
     t.string "name"
@@ -66,7 +82,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_140716) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.decimal "price"
+    t.decimal "price", precision: 7, scale: 4
     t.integer "store_qty"
     t.string "images", default: [], array: true
     t.string "sku"
@@ -89,4 +105,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_140716) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "products"
 end
