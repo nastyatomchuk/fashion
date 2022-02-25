@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_111009) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.decimal "price"
+    t.decimal "price", precision: 7, scale: 4
     t.integer "store_qty"
     t.string "images", default: [], array: true
     t.string "sku"
