@@ -1,1 +1,30 @@
-<h1>Welcome to the admin page</h1>
+
+
+<div class="dictionary">
+  <h1>Заказы (<%= @orders.size %>)</h1>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th class="th-18">ID</th>
+      <th >Дата</th>
+      <th colspan="2">Сумма</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td class="text-end"><%= order.id %></td>
+        <td><%= order.date %></td>
+        <td colspan="2"><%= in_dollars(order.total) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3" class="text-end"> Итого:</td>
+      <td colspan="2"> <%=in_dollars(Order.sum(:total)) %></td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

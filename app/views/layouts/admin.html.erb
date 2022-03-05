@@ -8,21 +8,38 @@
   <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
+<% flash.each do |name, message| %>
+  <div id="flash_message" style="display: none" flash-type="<%= flash_type(name) %>">
+    <%= message %>
+  </div>
+<% end %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-md">
-    <a class="navbar-brand" href="<%= admin_path %>">Admin panel</a>
+    <a class="navbar-brand" href="<%= admin_path %>">Панель админа</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="<%= admin_users_path %>">Users</a>
-        <a class="nav-link active" href="<%= admin_products_path %>">Products</a>
-        <a class="nav-link active" href="<%= admin_categories_path %>">Category</a>
+        <a class="nav-link active" aria-current="page" href="<%= admin_users_path %>">Пользователи</a>
+        <a class="nav-link active" href="<%= admin_products_path %>">Товары</a>
+        <a class="nav-link active" href="<%= admin_categories_path %>">Категории</a>
+        <a class="nav-link active" href="<%= admin_stores_path %>">Склад</a>
 <!--        <a class="nav-link active" href="<%#= admin_currencies_path %>">Currency</a>-->
 <!--        <a class="nav-link active" href="<%#= admin_currency_rates_path %>">Currency rates</a>-->
 <!--        <a class="nav-link active" href="<%#= admin_current_rates_path %>">Current rates</a>-->
       </div>
+
+    </div>
+    <div style="color: white; text-align: right">
+      <%= current_user.full_name %>
+      <% if user_signed_in? %>
+        <%= button_to 'Выйти', destroy_user_session_path, :method => :delete, class: "btn btn-secondary btn-min-120"%>
+      <% else %>
+        <span>Вы не авторизованы</span>
+        <%= button_to 'Войти', new_user_session_path, class: "header-action-btn login-btn" %>
+      <% end %>
     </div>
   </div>
 </nav>

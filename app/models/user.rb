@@ -7,5 +7,8 @@ class User < ApplicationRecord
          :rememberable,
          :validatable
 
+  has_many :orders
   validates :full_name, :phone, presence: true
+
+  enum role: { user: 0, admin: 1 }
 end

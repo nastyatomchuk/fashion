@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Здравстуйте <%=@order.user.full_name %>! Вы совершили заказ в интернет-магазине одежды "Вероника".</p>
+<p>
+  Детали заказа:<br>
+  ------------------------------------------<br>
+  Номер:    <%=@order.id %><br>
+  Дата:     <%=@order.date %><br>
+  Email:    <%=@order.user.email %><br>
+  Телефон:  <%=@order.user.phone %><br>
+<p>Итоговая стоимость: <%= @order.total %>$</p>
+
+<p>Заказ принят, наши сотрудники с вами свяжутся для подтверждения.</p>
+
+<p>По вопросам:<br>
+  ------------------------------------------<br>
+  Email:    tomchuk.stasy@gmail.com<br>
+  Телефон:  +3752912312323<br>
+</p>
+
+</body>
+</html>

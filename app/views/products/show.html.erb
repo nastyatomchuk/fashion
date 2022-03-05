@@ -14,7 +14,6 @@
   </div>
 <% end %>
 
-
 <!-- Product Details Area Start -->
 <div class="product-details-area pt-100px pb-100px">
   <div class="container">
@@ -52,73 +51,44 @@
           </div>
           <div class="pro-details-rating-wrap">
             <div class="rating-product">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+              <%@product.rate.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
             </div>
-            <span class="read-review"><a class="reviews" href="#">( 5 Customer Review )</a></span>
           </div>
-          <p class="mt-30px mb-0">Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod tempor incidi ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi
-            ut aliquip ex ea commodo </p>
+
+          <p class="mt-30px mb-0"><%=@product.description%></p>
           <div class="pro-details-quality">
-            <div class="cart-plus-minus">
-              <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+              <%= form_with model: @cart_item, remote: true do |f| %>
+                <%= f.hidden_field :product_id, value: @product.id %>
+                <p>Выберите количество:</p>
+              <div style="margin-left: 3%">
+                  <%= f.number_field :quantity, value: 1, min:  1%>
+              </div>
+                <p>Выберите размер:</p>
+                <div style="margin-bottom: 10%; margin-left: 3%">
+                      <%= f.collection_select :store_id, @stores, :id, :size, {}, class: "form-select"%>
+                </div>
+                <div class="pro-details-cart">
+                  <%= f.submit "В корзину", class: "add-cart" %>
+                </div>
+              <% end %>
             </div>
-            <div class="pro-details-cart">
-              <button class="add-cart" href="#"> Add To
-                Cart</button>
-            </div>
-            <div class="pro-details-compare-wishlist pro-details-wishlist ">
-              <a href="wishlist.html"><i class="pe-7s-like"></i></a>
-            </div>
-            <div class="pro-details-compare-wishlist pro-details-compare">
-              <a href="compare.html"><i class="pe-7s-refresh-2"></i></a>
-            </div>
-          </div>
-          <div class="pro-details-sku-info pro-details-same-style  d-flex">
-            <span>SKU: </span>
-            <ul class="d-flex">
-              <li>
-                <a href="#">Ch-256xl</a>
-              </li>
-            </ul>
-          </div>
-          <div class="pro-details-categories-info pro-details-same-style d-flex">
-            <span>Categories: </span>
-            <ul class="d-flex">
-              <li>
-                <a href="#">Fashion.</a>
-              </li>
-              <li>
-                <a href="#">eCommerce</a>
-              </li>
-            </ul>
-          </div>
-          <div class="pro-details-social-info pro-details-same-style d-flex">
-            <span>Share: </span>
-            <ul class="d-flex">
-              <li>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-google"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <div class="pro-details-sku-info pro-details-same-style  d-flex">
+          <span>SKU: </span>
+          <ul class="d-flex">
+            <li><%=@product.sku %></li>
+          </ul>
+        </div>
+        <div class="pro-details-categories-info pro-details-same-style d-flex">
+          <span>Category:</span>
+          <ul class="d-flex">
+            <li><%=@product.category.name %></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

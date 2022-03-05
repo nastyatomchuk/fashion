@@ -25,7 +25,7 @@
 # These variables are then only loaded and set in this stage.
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
-# Feel free to add new variables to customise your setup.
+# Feel free to add index variables to customise your setup.
 
 # Custom SSH Options
 # ==================

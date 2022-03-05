@@ -1,18 +1,18 @@
 <%= simple_form_for [:admin, user], defaults: { input_html: { class: 'mb-3' } }, wrapper: :vertical_form do |form| %>
-  <%= form.input :full_name, label: "Full name", class: "form-control #{field_validity_class(user, :full_name)},"%>
+  <%= form.input :full_name, label: "ФИО", class: "form-control #{field_validity_class(user, :full_name)},"%>
   <%= filed_errors(user, :full_name) %>
 
-  <%= form.input :phone, label: "Phone", class: "form-control #{field_validity_class(user, :phone)}" %>
+  <%= form.input :phone, label: "Телефон", class: "form-control #{field_validity_class(user, :phone)}" %>
   <%= filed_errors(user, :phone) %>
 
-  <%= form.input :email, label: "Email", class: "form-control #{field_validity_class(user, :email)}" %>
+  <%= form.input :email, label: "Почта", class: "form-control #{field_validity_class(user, :email)}" %>
   <%= filed_errors(user, :email) %>
 
-  <%= form.input :password, label: "Password", class: "form-control #{field_validity_class(user, :password)}" %>
+  <%= form.input :password, label: "Пароль", class: "form-control #{field_validity_class(user, :password)}" %>
   <%= filed_errors(user, :password) %>
 
    <div class="form-actions">
     <%= form.button :submit, value: 'OK', class: "btn btn-primary btn-min-120" %>
-    <%= link_to 'Cancel', admin_users_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>
+    <%= link_to 'Отмена', admin_users_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>
   </div>
 <%end %>

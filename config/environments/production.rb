@@ -55,7 +55,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
 
-  # Use a different cache store in production.
+  # Use a different cache stores in production.
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
@@ -86,7 +86,7 @@ Rails.application.configure do
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"
-  # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+  # config.logger = ActiveSupport::TaggedLogging.index(Syslog::Logger.index 'app-name')
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -110,7 +110,7 @@ Rails.application.configure do
   # class timestamps to determine how long to wait before reading from the
   # replica.
   #
-  # By default Rails will store a last write timestamp in the session. The
+  # By default Rails will stores a last write timestamp in the session. The
   # DatabaseSelector middleware is designed as such you can define your own
   # strategy for connection switching and pass that into the middleware through
   # these configuration options.

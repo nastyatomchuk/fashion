@@ -12,6 +12,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
+  # config.consider_all_requests_local = false
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
@@ -75,4 +76,17 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   #
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.smtp_settings = {
+    port: 587,
+    address: "smtp.gmail.com",
+    user_name: "tomchuk.stasy@gmail.com",
+    password: "jmpeywjgjohyeqnf",
+    authentication: :plain,
+    enable_starttls_auto: true,
+  }
 end

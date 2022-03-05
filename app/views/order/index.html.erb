@@ -1,0 +1,130 @@
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 text-center">
+        <h2 class="breadcrumb-title">Заказ</h2>
+        <!-- breadcrumb-list start -->
+        <ul class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="<%=home_index_path %>">Главная</a></li>
+          <li class="breadcrumb-item active">Заказ</li>
+        </ul>
+        <!-- breadcrumb-list end -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- breadcrumb-area end -->
+
+<!-- checkout area start -->
+<div class="checkout-area pt-100px pb-100px">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="billing-info-wrap">
+          <h3>Детали заказа </h3>
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <div class="billing-info mb-4">
+                <label>ФИО</label>
+                <input type="text" value="<%= current_user.full_name %>" />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="billing-info mb-4">
+                <label>Телефон</label>
+                <input type="text" value="<%= current_user.phone %>" />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="billing-info mb-4">
+                <label>Почта</label>
+                <input type="text" value="<%= current_user.email %>" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="billing-info mb-4">
+              <label>Адрес самовывоза</label>
+              <input class="billing-address" placeholder="Green street 1A, second floor" type="text" disabled="true" />
+            </div>
+          </div>
+<!--          <div class="additional-info-wrap">-->
+<!--            <h4>Дополнительная информация</h4>-->
+<!--            <div class="additional-info">-->
+<!--              <textarea placeholder="Notes about your order, e.g. special notes for delivery. "-->
+<!--                        name="message"></textarea>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+      </div>
+
+      <div class="col-lg-5 mt-md-30px mt-lm-30px ">
+        <div class="your-order-area">
+          <h3>Ваш заказ</h3>
+          <div class="your-order-wrap gray-bg-4">
+            <div class="your-order-product-info">
+
+              <div class="your-order-top">
+                <ul>
+                  <li>Товар</li>
+                  <li>Итого</li>
+                </ul>
+              </div>
+              <div class="your-order-middle">
+                <ul>
+                  <% @cart_items.each do |item| %>
+                  <li><span class="order-middle-left"><%=item.product.title %></span> <span
+                    class="order-price"><%=item.product.price %> </span></li>
+                  <% end%>
+                </ul>
+              </div>
+              <div class="your-order-bottom">
+                <ul>
+                  <li class="your-order-shipping">Доставка</li>
+                  <li>Самовывоз</li>
+                </ul>
+              </div>
+              <div class="your-order-total">
+                <ul>
+                  <li class="order-total">Сумма</li>
+                  <li> <%=  in_dollars(current_cart.subtotal)%></li>
+                </ul>
+              </div>
+            </div>
+            <div class="payment-method">
+              <div class="payment-accordion element-mrg">
+                <div id="faq" class="panel-group">
+                  <div class="panel panel-default single-my-account m-0">
+                    <div class="panel-heading my-account-title">
+                      <h4 class="panel-title"><a data-bs-toggle="collapse"
+                                                 href="#my-account-3">Оплата при получении</a></h4>
+                    </div>
+                    <div id="my-account-3" class="panel-collapse collapse"
+                         data-bs-parent="#faq">
+<!--
+                      <div class="panel-body">
+                        <p>свцасвцауц</p>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Place-order mt-25">
+            <%= form_with model: @order, remote: true do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :cart_id, value: current_cart.id %>
+              <%= f.hidden_field :date, value: Date.today %>
+              <%= f.hidden_field :total, value: current_cart.subtotal %>
+              <%= f.submit "Оформить заказ"%>
+          <%end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- checkout area end -->

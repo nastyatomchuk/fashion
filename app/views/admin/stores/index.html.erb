@@ -1,0 +1,33 @@
+<div class="dictionary">
+  <%= new_right_button(new_admin_store_path) %>
+  <h1>Записи (<%= @stores.size %>)</h1>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="th-18 text-nowrap">ID</th>
+        <th class="th-18"></th>
+        <th>Товар</th>
+        <th style="width: 8%">id товара</th>
+        <th>Описание</th>
+        <th class="th-18">Размер</th>
+        <th class="th-18">Колчество</th>
+        <th class="th-18"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stores.each do |store| %>
+        <tr>
+          <td class="text-end"><%= store.id %></td>
+          <td><%= edit_link(edit_admin_store_path(store)) %></td>
+          <td><%= store.product.title%></td>
+          <td class="text-end"><%= store.product.id%></td>
+          <td><%= store.product.description%></td>
+          <td style="text-align: center"><%= store.size %></td>
+          <td class="text-end"><%= store.quantity %></td>
+          <td><%= destroy_link(admin_store_path(store)) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

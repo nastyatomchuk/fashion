@@ -13,7 +13,7 @@ module Admin
       if @currency.save
         redirect_to @currency
       else
-        render :new
+        render :index
       end
     end
 

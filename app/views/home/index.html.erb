@@ -1,19 +1,15 @@
+
 <!-- Product Area Start -->
-<div class="product-area pt-100px pb-100px">
+<div class="product-area pt-50px pb-100px">
   <div class="container">
     <!-- Section Title & Tab Start -->
     <div class="row">
       <!-- Section Title Start -->
       <div class="col-12">
         <div class="section-title text-center mb-0">
-          <h2 class="title">#products</h2>
+          <h2 class="title">#Одежда</h2>
           <!-- Tab Start -->
-          <div class="nav-center">
-            <ul class="product-tab-nav nav align-items-center justify-content-center">
-              <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
-                                      href="#tab-product--all">All</a></li>
-            </ul>
-          </div>
+          <div class="nav-center"></div><BR>
           <!-- Tab End -->
         </div>
       </div>
@@ -34,29 +30,22 @@
                   <div class="product">
                     <div class="thumb">
                       <a href="<%= product_path(product) %>" class="image">
-                        <img class="img-responsive m-auto" src="<%=product.images.first.url %>" alt="Product" />
-                      </a>
-                      <div class="actions">
-                        <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                          class="pe-7s-like"></i></a>
-                        <a href="#" class="action quickview" data-link-action="quickview"
-                           title="Quick view" data-bs-toggle="modal"
-                           data-bs-target="#exampleModal"><i class="pe-7s-search"></i></a>
-                        <a href="compare.html" class="action compare" title="Compare"><i
-                          class="pe-7s-refresh-2"></i></a>
-                      </div>
-                      <%= form_with model: @cart_item do |f| %>
-                        <%= f.hidden_field :product_id, value: product.id %>
-                        <%= f.hidden_field :quantity, value: 1 %>
-                        <%= f.submit "Add To Cart", class: "add-to-cart" %>
-                      <% end %>
+                        <img class="img-responsive m-auto" src="<%=product.images.first.url %>"  width="270" height="310" alt="Product" />
+                      </a><span class="badges">
+                        <span class="new">New</span>
+                      </span>
                     </div>
                     <div class="content">
+                      <div class="rating-product">
+                        <%product.rate.times do %>
+                          <i class="fa fa-star"></i>
+                        <% end %>
+                      </div>
                       <h5 class="title"><a href="<%= home_path(product)%>"><%=product.title%>
                       </a>
                       </h5>
                       <span class="price">
-                        <span class="new"><%=product.price%></span>
+                        <span class="new"><%=in_dollars(product.price)%></span>
                     </span>
                     </div>
                   </div>
@@ -66,7 +55,7 @@
           </div>
           <!-- 1st tab end -->
         </div>
-        <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark m-auto"> Load More <i
+        <a href="<%= products_path %>" class="btn btn-lg btn-primary btn-hover-dark m-auto">Каталог <i
           class="fa fa-arrow-right ml-15px" aria-hidden="true"></i></a>
       </div>
     </div>

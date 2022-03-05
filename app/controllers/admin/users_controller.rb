@@ -1,13 +1,16 @@
 module Admin
   class UsersController < AdminController
+    before_action :authenticate_user!
     before_action :load_user, only: %i[show edit update destroy]
 
     def index
       @users = User.order(:full_name)
+      authorize @users
     end
 
     def new
       @user = User.new
+      authorize @user
     end
 
     def edit
@@ -15,26 +18,28 @@ module Admin
 
     def create
       @user = User.new(user_params)
+      authorize @user
       if @user.save
-        redirect_to admin_users_path, notice: "User was successfully created."
       else
-        flash.now[:alert] = "User save error"
+        flash.now[:alert] = "Ошибка сохранения пользователя."
         render :new
       end
     end
 
     def update
+      authorize @user
       if @user.update(user_params)
-        redirect_to admin_users_path, notice: "User was successfully updated."
+        redirect_to admin_users_path, notice: "Пользователь обновлен."
       else
-        flash.now[:alert] = "User save error"
+        flash.now[:alert] = "Ошибка сохранения пользователя."
         render :edit, status: :unprocessable_entity
       end
     end
 
     def destroy
+      authorize @user
       @user.destroy
-      redirect_to admin_users_path, notice: "User was successfully destroyed."
+      redirect_to admin_users_path, notice: "Пользователь удален."
     end
 
     private

@@ -17,7 +17,7 @@ module Admin
       if @currency_rates.save
         redirect_to admin_currency_rates_path
       else
-        render :new
+        render :index
       end
     end
 

@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, store], wrapper: :vertical_form do |form| %>
+  <%= form.input :size, class: "form-control #{field_validity_class(store, :size)}", collection: ["S", "M", "L", "XL", "XXL"]%>
+  <%= filed_errors(store, :size) %>
+
+  <%= form.input :quantity, class: "form-control #{field_validity_class(store, :quantity)}"  %>
+  <%= filed_errors(store, :quantity) %>
+
+  <%= form.association :product, label_method: lambda { |owner| "#{owner.id} | #{owner.title} | #{owner.description}"}, value_method: :id, prompt: "< Выберите товар >" %>
+
+  <div class="form-actions">
+    <%= form.button :submit, value: 'OK', class: "btn btn-primary btn-min-120" %>
+    <%= link_to 'Отмена', admin_products_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>
+  </div>
+<%end %>

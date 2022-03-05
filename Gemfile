@@ -8,8 +8,10 @@ gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'carrierwave', '~> 2.0'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jbuilder', '~> 2.7'
+gem 'mini_magick', '~> 4.11'
 gem 'pg', '~> 1.3'
 gem 'puma', '~> 5.0'
+gem 'pundit', '~> 2.2'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'sass-rails', '>= 6'
 gem 'seedbank', '~> 0.5.0'
@@ -18,7 +20,12 @@ gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 5.0'
-gem "mini_magick", '~> 4.11'
+gem 'kaminari'
+gem 'rubyzip'
+gem 'axlsx'
+gem 'axlsx_rails'
+gem 'i18n'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -34,4 +41,5 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
+
 end

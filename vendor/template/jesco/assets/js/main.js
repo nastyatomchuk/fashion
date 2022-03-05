@@ -211,7 +211,7 @@
         New Product Slider
      ---------------------- */
 
-    var productSlider = new Swiper('.new-product-slider.swiper-container', {
+    var productSlider = new Swiper('.index-product-slider.swiper-container', {
         slidesPerView: 4,
         spaceBetween: 30,
         speed: 1500,

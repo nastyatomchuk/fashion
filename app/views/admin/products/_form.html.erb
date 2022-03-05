@@ -1,32 +1,28 @@
 <%= simple_form_for [:admin, @product], wrapper: :vertical_form do |form| %>
-  <%= form.input :title, label: "Title", class: "form-control #{field_validity_class(product, :title)},"%>
+  <%= form.input :title, class: "form-control #{field_validity_class(product, :title)},"%>
   <%= filed_errors(product, :title) %>
 
-  <%= form.input :description, label: "Description", class: "form-control #{field_validity_class(product, :description)}"  %>
+  <%= form.input :description, class: "form-control #{field_validity_class(product, :description)}"  %>
   <%= filed_errors(product, :description) %>
 
-  <%= form.input :sku, label: "SKU", class: "form-control #{field_validity_class(product, :sku)}" %>
+  <%= form.input :sku, class: "form-control #{field_validity_class(product, :sku)}" %>
   <%= filed_errors(product, :sku) %>
 
-  <%= form.input :rate, label: "Rate", class: "form-control #{field_validity_class(product, :rate)}", input_html: { min: '1'} %>
+  <%= form.input :rate, class: "form-control #{field_validity_class(product, :rate)}", input_html: { min: '1'} %>
   <%= filed_errors(product, :rate) %>
 
-  <%= form.input :price, label: "Price", class: "form-control #{field_validity_class(product, :price)}", input_html: { min: '0', placeholder:  "00.00"}  %>
+  <%= form.input :price, class: "form-control #{field_validity_class(product, :price)}", input_html: { min: '0', placeholder:  "00.00"}  %>
   <%= filed_errors(product, :price) %>
 
-  <%= form.input :store_qty, label: "Quantity", class: "form-control #{field_validity_class(product, :store_qty)}", input_html: { min: '1'} %>
-  <%= filed_errors(product, :store_qty) %>
-
-  <%= form.input :images, label: "Images", class: "form-control" do %>
+  <%= form.input :images, label: "Картинки", class: "form-control" do %>
     <%= form.file_field :images, label: "Image", class: "form-control #{field_validity_class(product, :images)}", multiple: true %>
     <%= filed_errors(product, :images) %>
   <% end %>
 
-  <%= form.association :category, label_method: :name, value_method: :id, prompt: "< Choose category >" %>
-  <%= form.button :submit, class: "btn btn-primary " %>
+  <%= form.association :category, label_method: :name, value_method: :id, prompt: "< Выберите категорию >" %>
 
   <div class="form-actions">
     <%= form.button :submit, value: 'OK', class: "btn btn-primary btn-min-120" %>
-    <%= link_to 'Cancel', admin_products_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>
+    <%= link_to 'Отмена', admin_products_path, class: "btn btn-secondary btn-min-120 btn-ml-20" %>
   </div>
 <%end %>
