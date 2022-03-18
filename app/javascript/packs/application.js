@@ -30,6 +30,11 @@ $(document).on('turbolinks:load', function(){
 //     $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
 // });
 
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 400,
+        spaceBetween: 500
+    });
+
     var zoomThumb = new Swiper('.zoom-thumbs', {
         spaceBetween: 10,
         slidesPerView: 4,
@@ -37,6 +42,7 @@ $(document).on('turbolinks:load', function(){
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
     });
+
     var zoomTop = new Swiper('.zoom-top', {
         spaceBetween: 0,
         slidesPerView: 1,

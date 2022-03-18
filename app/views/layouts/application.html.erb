@@ -44,12 +44,10 @@
           <div class="header-actions">
             <% if user_signed_in? %>
               <span>Здравствуйте, <%= current_user.full_name %></span>
-              <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: "header-action-btn login-btn" %>
+              <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: "header-action-btn login-btn", data: { confirm: 'Вы уверены что хотите выйти из профиля? Все товары из корзины будут удалены.'}%>
             <% else %>
-              <%# CartItem.delete_all %>
               <%= link_to 'Войти', new_user_session_path, class: "header-action-btn login-btn" %>
             <% end %>
-
             <!-- Single Wedge End -->
             <a href="<%=cart_path %>"
                class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
@@ -65,9 +63,9 @@
 </header>
 </div>
 
-<div class ="container">
+<!--<div class ="container">-->
   <%= yield %>
-</div>
+<!--</div>-->
 
 <!-- Footer Area Start -->
 <div class="footer-area">

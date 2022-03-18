@@ -1,4 +1,46 @@
+<!-- Hero/Intro Slider Start -->
+<div class="section ">
+  <div class="hero-slider swiper-container slider-nav-style-1 slider-dot-style-1">
+    <!-- Hero slider Active -->
+      <!-- Single slider item -->
+      <div class="hero-slide-item slider-height swiper-slide d-flex bg-color1">
+        <div class="container align-self-center">
+          <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 align-self-center sm-center-view">
+              <div class="hero-slide-content slider-animated-1">
+                <h2 class="title-1">Модная коллекция</h2>
+                <h2 class="title-2">2022</h2>
+                <a href="<%=products_path %>" class="btn btn-lg btn-primary btn-hover-dark"> Каталог <i
+                  class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div
+              class="col-xl-7 col-lg-7 col-md-7 col-sm-7 d-flex justify-content-center position-relative">
+              <div class="show-case">
+                <div class="hero-slide-image">
+                  <%= image_tag 'Дизайн без названия.png' %>
+                </div>
+                <div class="display-wrapper">
+                  <div class="content-side">
+                    <% @a = @products.last %>
+                    <h4 class="title"><%=@a.title %></h4>
+                    <span class="price"><%=in_dollars(@a.price) %></span>
+                    <a href="<%=products_path %>" class="shop-link">Каталог</a>
+                  </div>
+                  <div class="image-side">
+                    <a href="<%= product_path(@a) %>" class="image">
+                      <img src="<%=@a.images.first.url %>"  width="80" height="100" alt="Product" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
 
+<!-- Hero/Intro Slider End -->
+<br>
 <!-- Product Area Start -->
 <div class="product-area pt-50px pb-100px">
   <div class="container">
