@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'errors/not_found'
   get 'errors/internal_server_error'
-    devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
     root 'home#index'
     resources :home, only: [:index, :show]
     get 'about', to: 'home#about'
